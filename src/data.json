@@ -1,0 +1,145 @@
+[{
+    "id": 0,
+    "name": "Wisdom of the Aetherweaver",
+    "logogram": "Conceptual",
+    "type": "Offensive"
+  },
+  {
+    "id": 1,
+    "name": "Wisdom of the Martialist",
+    "logogram": "Conceptual",
+    "type": "Offensive"
+  },
+  {
+    "id": 2,
+    "name": "Wisdom of the Platebearer",
+    "logogram": "Conceptual",
+    "type": "Protective"
+  },
+  {
+    "id": 3,
+    "name": "Incense L",
+    "logogram": "Conceptual",
+    "type": "Protective"
+  },
+  {
+    "id": 4,
+    "name": "Cure L",
+    "logogram": "Conceptual",
+    "type": "Curative"
+  },
+  {
+    "id": 5,
+    "name": "Backstep L",
+    "logogram": "Conceptual",
+    "type": "Tactical"
+  },
+  {
+    "id": 6,
+    "name": "Paralyze L",
+    "logogram": "Conceptual",
+    "type": "Inimical"
+  },
+  {
+    "id": 7,
+    "name": "Esuna L",
+    "logogram": "Fundamental",
+    "type": "Curative"
+  },
+  {
+    "id": 8,
+    "name": "Raise L",
+    "logogram": "Fundamental",
+    "type": "Curative"
+  },
+  {
+    "id": 9,
+    "name": "Feint L",
+    "logogram": "Fundamental",
+    "type": "Tactical"
+  },
+  {
+    "id": 10,
+    "name": "Tranquilizer L",
+    "logogram": "Fundamental",
+    "type": "Inimical"
+  },
+  {
+    "id": 11,
+    "name": "Protect L",
+    "logogram": "Fundamental",
+    "type": "Mitigative"
+  },
+  {
+    "id": 12,
+    "name": "Wisdom of the Skirmisher",
+    "logogram": "Offensive",
+    "type": "Offensive"
+  },
+  {
+    "id": 13,
+    "name": "Bloodbath L",
+    "logogram": "Offensive",
+    "type": "Offensive"
+  },
+  {
+    "id": 14,
+    "name": "Wisdom of the Guardian",
+    "logogram": "Protective",
+    "type": "Protective"
+  },
+  {
+    "id": 15,
+    "name": "Wisdom of the Remembered",
+    "logogram": "Protective",
+    "type": "Protective"
+  },
+  {
+    "id": 16,
+    "name": "Wisdom of the Ordained",
+    "logogram": "Curative",
+    "type": "Curative"
+  },
+  {
+    "id": 17,
+    "name": "Cure L II",
+    "logogram": "Curative",
+    "type": "Curative"
+  },
+  {
+    "id": 18,
+    "name": "Featherfoot L",
+    "logogram": "Tactical",
+    "type": "Tactical"
+  },
+  {
+    "id": 19,
+    "name": "Stealth L",
+    "logogram": "Tactical",
+    "type": "Tactical"
+  },
+  {
+    "id": 20,
+    "name": "Spirit Dart L",
+    "logogram": "Inimical",
+    "type": "Inimical"
+  },
+  {
+    "id": 21,
+    "name": "Dispel L",
+    "logogram": "Inimical",
+    "type": "Inimical"
+  },
+  {
+    "id": 22,
+    "name": "Shell L",
+    "logogram": "Mitigative",
+    "type": "Mitigative"
+  },
+  {
+    "id": 23,
+    "name": "Stoneskin L",
+    "logogram": "Mitigative",
+    "type": "Mitigative"
+  }
+]
