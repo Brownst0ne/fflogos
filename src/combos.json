@@ -517,19 +517,22 @@
   {
     "id": 32,
     "name": "Cure L II",
-    "amount": 3,
+    "amount": 4,
     "mneme1":
-    ["Raise L",
+    [ "Cure L II",
+      "Raise L",
       "Cure L",
       "Wisdom of the Ordained"
     ],
     "mneme2":
-    ["Raise L",
+    [ "",
+      "Raise L",
       "Cure L",
       "Cure L"
     ],
     "mneme3":
-    ["Raise L",
+    [ "",
+      "Raise L",
       "Cure L",
       ""
     ],

@@ -27,7 +27,7 @@ function Mneme(props) {
   return (
     <tr className={data[props.value].logogram + v}>
       <td>
-        <img src= {images[data[props.value].type + "_mneme.png"]}/>
+        <img src= {images[data[props.value].type + "_mneme.png"]} alt=""/>
         {data[props.value].name}
       </td>
       <td className={"nums"}>{props.totals}</td>
@@ -40,7 +40,7 @@ function Logo(props) {
   return (
     <tr className={data[props.value].logogram + v}>
       <td>
-        <img src= {images[data[props.value].logogram + ".png"]}/>
+        <img src= {images[data[props.value].logogram + ".png"]} alt=""/>
         {data[props.value].logogram}
       </td>
     </tr>
@@ -54,7 +54,7 @@ const label = flipped => {
   let mnem = [];
   let c = "";
   for(let i = 0; i < combos[flipped].amount; i++){
-    if(i%2==0){
+    if(i%2===0){
       c = "mo";
     } else {c = "me";}
     mnem.push(
@@ -110,7 +110,7 @@ class Logogram extends React.Component {
   renderGram() {
     let row = [];
     for(let j = 0; j < 24; j++) {
-      if(j === 0 || j > 0 && (data[j].logogram !== data[j-1].logogram)){
+      if(j === 0 ||( j > 0 && (data[j].logogram !== data[j-1].logogram))){
         row.push(<Logo value={j} check={this.props.checkLogo[j]} key={j}/>);
     }
     }
@@ -195,6 +195,8 @@ class Board extends React.Component {
 class Game extends React.Component {
   constructor(props) {
     super(props);
+
+
     this.state = {
       width: window.innerWidth,
       squares: Array(50).fill(null),
@@ -215,13 +217,54 @@ class Game extends React.Component {
     };
   }
 
+  saveState() {
+    for (let key in this.state) {
+
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
+    }
+  }
+
+  loadState() {
+    for (let key in this.state) {
+      if(localStorage.hasOwnProperty(key)) {
+        let value = localStorage.getItem(key);
+
+        try {
+          value = JSON.parse(value);
+
+          this.setState({[key]: value})
+        } catch (e) {
+          this.setState({[key]: value})
+        }
+      }
+    }
+  }
+
   componentWillMount() {
     window.addEventListener('resize', this.handleWindowSizeChange);
   }
 
   componentWillUnmount() {
+    window.removeEventListener(
+      "beforeunload",
+      this.saveState.bind(this)
+    );
+
+    // saves if component has a chance to unmount
+    this.saveState();
     window.removeEventListener('resize', this.handleWindowSizeChange);
   }
+
+  componentDidMount() {
+    this.loadState();
+
+    window.addEventListener(
+      "beforeunload",
+      this.saveState.bind(this)
+    );
+
+  }
+
 
   handleWindowSizeChange = () => {
     this.setState({ width: window.innerWidth });
@@ -260,7 +303,7 @@ class Game extends React.Component {
     var left = calculateRemaining(squares);
     var totals = calculcateTotal(squares);
 
-    label:
+    labeled:
     for(let j = 0; j < 24; j++){
       for(let k = 0; k < left.length; k++){
         if(this.state.mnemes[j] === left[k]){
@@ -289,8 +332,11 @@ class Game extends React.Component {
               break;
             case "Mitigative":
               mit = 2;
+              break;
+            default:
+
           }
-          continue label;
+          continue labeled;
         }
       }
       checkMneme[j] = null;
@@ -423,7 +469,7 @@ class Game extends React.Component {
         <div className="container-fluid">
           <div className="row" id="header-content" style={ {backgroundImage: "url(" + images['banner.png'] + ")"}}>
             <div >
-              <img src={require('./img/logo.png')} className={"img-fluid"}/>
+              <img src={require('./img/logo.png')} className={"img-fluid"} alt=""/>
             </div>
           </div>
           <div className="row">
@@ -491,7 +537,7 @@ class Game extends React.Component {
       <div className="container-fluid">
         <div className="row" id="header-content" style={ {backgroundImage: "url(" + images['banner.png'] + ")"}}>
           <div >
-            <img src={require('./img/logo.png')} className={"img-fluid"}/>
+            <img src={require('./img/logo.png')} className={"img-fluid"} alt=""/>
           </div>
         </div>
         <div className="row">
