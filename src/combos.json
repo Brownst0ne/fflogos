@@ -3,9 +3,9 @@
     "id": 0,
     "name": "Wisdom of the Aetherweaver",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Aetherweaver"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Wisdom of the Aetherweaver"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Increases magic damage dealt by 60%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -16,9 +16,9 @@
     "id": 1,
     "name": "Wisdom of the Martialist",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Martialist"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Wisdom of the Martialist"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Increases physical damage dealt by 40%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -29,9 +29,9 @@
     "id": 2,
     "name": "Wisdom of the Platebearer",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Platebearer"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Wisdom of the Platebearer"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Increases defense by 3,000 and maximum HP by 50%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -41,28 +41,25 @@
   {
     "id": 3,
     "name": "Wisdom of the Guardian",
-    "amount": 1,
-    "mneme1":
-    {
-      "one":"Wisdom of the Platebearer",
-      "two":"Stoneskin L",
-      "three":"Wisdom of the Platebearer",
-      "four":"Wisdom of the Platebearer"
-    },
-    "mneme2":
-    {
-      "one":"Incense L",
-      "two":"Stoneskin L",
-      "three":"Protect L",
-      "four":"Stoneskin L"
-    },
-    "mneme3":
-    {
-      "one":"Incense L",
-      "two":"Stoneskin L",
-      "three":"",
-      "four":""
-    },
+    "amount": 4,
+    "mneme1":[
+                "Wisdom of the Platebearer",
+                "Stoneskin L",
+                "Wisdom of the Platebearer",
+                "Wisdom of the Platebearer"
+            ],
+    "mneme2":[
+                "Incense L",
+                "Stoneskin L",
+                "Protect L",
+                "Stoneskin L"
+             ],
+    "mneme3":[
+                "Incense L",
+                "Stoneskin L",
+                "",
+                ""
+             ],
     "description": "Increases defense by 1,800 and maximum HP by 10%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -73,24 +70,21 @@
     "id": 4,
     "name": "Wisdom of the Ordained",
     "amount": 3,
-    "mneme1":
-    {
-      "one":"Cure L",
-      "two":"Cure L II",
-      "three":"Wisdom of the Aetherweaver"
-    },
-    "mneme2":
-    {
-      "one":"Cure L",
-      "two":"Cure L II",
-      "three":"Esuna L"
-    },
-    "mneme3":
-    {
-      "one":"Wisdom of the Aetherweaver",
-      "two":"Cure L II",
-      "three":""
-    },
+    "mneme1":[
+              "Cure L",
+              "Cure L II",
+              "Wisdom of the Aetherweaver"
+            ],
+    "mneme2":[
+              "Cure L",
+              "Cure L II",
+              "Esuna L"
+            ],
+    "mneme3":[
+              "Wisdom of the Aetherweaver",
+              "Cure L II",
+              ""
+            ],
     "description": "Increases maximum MP by 50% and healing magic potency by 25%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -101,9 +95,9 @@
     "id": 5,
     "name": "Wisdom of the Skirmisher",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Martialist"},
-    "mneme2": {"one":"Wisdom of the Martialist"},
-    "mneme3": {"one":"Wisdom of the Martialist"},
+    "mneme1": ["Wisdom of the Martialist"],
+    "mneme2": ["Wisdom of the Martialist"],
+    "mneme3": ["Wisdom of the Martialist"],
     "description": "Increases damage dealt by 12%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -113,9 +107,9 @@
     "id": 6,
     "name": "Wisdom of the Watcher",
     "amount": 1,
-    "mneme1": {"one":"Stealth L"},
-    "mneme2": {"one":"Stealth L"},
-    "mneme3": {"one":""},
+    "mneme1": ["Stealth L"],
+    "mneme2": ["Stealth L"],
+    "mneme3": [""],
     "description": "Increases evasion by 25% while reducing damage dealt by 5%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -125,9 +119,9 @@
     "id": 7,
     "name": "Wisdom of the Templar",
     "amount": 1,
-    "mneme1": {"one":"Stoneskin L"},
-    "mneme2": {"one":"Cure L"},
-    "mneme3": {"one":"Wisdom of the Platebearer"},
+    "mneme1": ["Stoneskin L"],
+    "mneme2": ["Cure L"],
+    "mneme3": ["Wisdom of the Platebearer"],
     "description": "Increases healing magic potency by 50% and maximum HP by 30%, while reducing damage dealt by 5%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -138,9 +132,9 @@
     "id": 8,
     "name": "Wisdom of the Irregular",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Martialist"},
-    "mneme2": {"one":"Wisdom of the Skirmisher"},
-    "mneme3": {"one":"Incense L"},
+    "mneme1": ["Wisdom of the Martialist"],
+    "mneme2": ["Wisdom of the Skirmisher"],
+    "mneme3": ["Incense L"],
     "description": "Increases damage dealt by 21% while reducing magic defense by 60%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -150,9 +144,9 @@
     "id": 9,
     "name": "Wisdom of the Breathtaker",
     "amount": 1,
-    "mneme1": {"one":"Stealth L"},
-    "mneme2": {"one":"Stealth L"},
-    "mneme3": {"one":"Stealth L"},
+    "mneme1": ["Stealth L"],
+    "mneme2": ["Stealth L"],
+    "mneme3": ["Stealth L"],
     "description": "Increases poison resistance and movement speed, including mount speed, and increases evasion by 10%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -163,9 +157,9 @@
     "id": 10,
     "name": "Wisdom of the Remembered",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Martialist"},
-    "mneme2": {"one":"Wisdom of the Aetherweaver"},
-    "mneme3": {"one":"Wisdom of the Platebearer"},
+    "mneme1": ["Wisdom of the Martialist"],
+    "mneme2": ["Wisdom of the Aetherweaver"],
+    "mneme3": ["Wisdom of the Platebearer"],
     "description": "Increases maximum HP by 10% and accuracy by 30%. Additional Effect: Grants a 70% chance of automatic revival upon KO Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 1,
     "type": "Spell",
@@ -176,9 +170,9 @@
     "id": 11,
     "name": "Protect L",
     "amount": 1,
-    "mneme1": {"one":"Protect L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Protect L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Increases the physical defense of target by 1,000. Duration: 30m",
     "use": 0,
     "type": "Spell",
@@ -190,20 +184,17 @@
     "name": "Shell L",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Shell L",
-      "two":"Protect L"
-    },
+    ["Shell L",
+      "Protect L"
+    ],
     "mneme2":
-    {
-      "one":"",
-      "two":"Esuna L"
-    },
+    ["",
+      "Esuna L"
+    ],
     "mneme3":
-    {
-      "one":"",
-      "two":""
-    },
+    ["",
+      ""
+    ],
     "description": "Increases the magic defense of target by 1,000. Duration: 30m",
     "use": 0,
     "type": "Spell",
@@ -215,23 +206,20 @@
     "name": "Death L",
     "amount": 3,
     "mneme1":
-    {
-      "one":"Tranquilizer L",
-      "two":"Wisdom of the Aetherweaver",
-      "three":"Dispel L"
-    },
+    ["Tranquilizer L",
+      "Wisdom of the Aetherweaver",
+      "Dispel L"
+    ],
     "mneme2":
-    {
-      "one":"Tranquilizer L",
-      "two":"Raise L",
-      "three":"Dispel L"
-    },
+    ["Tranquilizer L",
+      "Raise L",
+      "Dispel L"
+    ],
     "mneme3":
-    {
-      "one":"Raise L",
-      "two":"Paralyze L",
-      "three":"Dispel L"
-    },
+    ["Raise L",
+      "Paralyze L",
+      "Dispel L"
+    ],
     "description": "KOs target. The less the target's HP, the greater the chance of success.",
     "use": 30,
     "type": "Spell",
@@ -243,20 +231,17 @@
     "name": "Focus L",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Bloodbath L",
-      "two":"Bloodbath L"
-    },
+    ["Bloodbath L",
+      "Bloodbath L"
+    ],
     "mneme2":
-    {
-      "one":"Wisdom of the Skirmisher",
-      "two":"Bloodbath L"
-    },
+    ["Wisdom of the Skirmisher",
+      "Bloodbath L"
+    ],
     "mneme3":
-    {
-      "one":"",
-      "two":"Bloodbath L"
-    },
+    ["",
+      "Bloodbath L"
+    ],
     "description": "Grants a stack of Boost, up to a maximum of 16. Boost Bonus: Increases potency of next weaponskill by 30% per stack Duration: 30s Shares a recast timer with all weaponskills.",
     "use": 99,
     "type": "Ability",
@@ -267,9 +252,9 @@
     "id": 15,
     "name": "Paralyze L",
     "amount": 1,
-    "mneme1": {"one":"Paralyze L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Paralyze L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Afflicts target with Paralysis Duration: 60s",
     "use": 99,
     "type": "Spell",
@@ -280,9 +265,9 @@
     "id": 16,
     "name": "Paralyze L III",
     "amount": 1,
-    "mneme1": {"one":"Paralyze L"},
-    "mneme2": {"one":"Paralyze L"},
-    "mneme3": {"one":"Paralyze L"},
+    "mneme1": ["Paralyze L"],
+    "mneme2": ["Paralyze L"],
+    "mneme3": ["Paralyze L"],
     "description": "Afflicts target and all neaby enemies with Paralysis Duration: 60s",
     "use": 20,
     "type": "Spell",
@@ -293,9 +278,9 @@
     "id": 17,
     "name": "Swift L",
     "amount": 1,
-    "mneme1": {"one":"Featherfoot L"},
-    "mneme2": {"one":"Featherfoot L"},
-    "mneme3": {"one":""},
+    "mneme1": ["Featherfoot L"],
+    "mneme2": ["Featherfoot L"],
+    "mneme3": [""],
     "description": "Greatly increases movement speed. Duration: 10s",
     "use": 20,
     "type": "Ability",
@@ -307,20 +292,17 @@
     "name": "Featherfoot L",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Featherfoot L",
-      "two":"Feint L"
-    },
+    ["Featherfoot L",
+      "Feint L"
+    ],
     "mneme2":
-    {
-      "one":"",
-      "two":"Feint L"
-    },
+    ["",
+      "Feint L"
+    ],
     "mneme3":
-    {
-      "one":"",
-      "two":""
-    },
+    ["",
+      ""
+    ],
     "description": "Increases evasion by 15%. Duration: 45s",
     "use": 50,
     "type": "Ability",
@@ -332,20 +314,17 @@
     "name": "Spirit Dart L",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Spirit Dart L",
-      "two":"Wisdom of the Aetherweaver"
-    },
+    ["Spirit Dart L",
+      "Wisdom of the Aetherweaver"
+    ],
     "mneme2":
-    {
-      "one":"",
-      "two":"Paralyze L"
-    },
+    ["",
+      "Paralyze L"
+    ],
     "mneme3":
-    {
-      "one":"",
-      "two":"Tranquilizer L"
-    },
+    ["",
+      "Tranquilizer L"
+    ],
     "description": "Delivers a ranged attack with a potency of 100. Additional Effect: Afflicts target with Spirit Dart L, increasing damage taken by 8% Duration: 60s",
     "use": 50,
     "type": "Weaponskill",
@@ -357,20 +336,17 @@
     "name": "Catastrophe L",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Spirit Dart L",
-      "two":"Bloodbath L"
-    },
+    ["Spirit Dart L",
+      "Bloodbath L"
+    ],
     "mneme2":
-    {
-      "one":"Spirit Dart L",
-      "two":"Bloodbath L"
-    },
+    ["Spirit Dart L",
+      "Bloodbath L"
+    ],
     "mneme3":
-    {
-      "one":"Spirit Dart L",
-      "two":""
-    },
+    ["Spirit Dart L",
+      ""
+    ],
     "description": "Deals unaspected damage to all nearby enemies with a potency of 4,000, while dealing damage with a potency of 999,999 to self.",
     "use": 3,
     "type": "Ability",
@@ -382,20 +358,17 @@
     "name": "Dispel L",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Tranquilizer L",
-      "two":"Esuna L"
-    },
+    ["Tranquilizer L",
+      "Esuna L"
+    ],
     "mneme2":
-    {
-      "one":"Tranquilizer L",
-      "two":"Esuna L"
-    },
+    ["Tranquilizer L",
+      "Esuna L"
+    ],
     "mneme3":
-    {
-      "one":"Tranquilizer L",
-      "two":"Esuna L"
-    },
+    ["Tranquilizer L",
+      "Esuna L"
+    ],
     "description": "Removes one beneficial status from target.",
     "use": 0,
     "type": "Spell",
@@ -406,9 +379,9 @@
     "id": 22,
     "name": "Feint L",
     "amount": 1,
-    "mneme1": {"one":"Feint L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Feint L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Delivers an attack with a potency of 100. Additional Effect: Reduces target's evasion Duration: 60s",
     "use": 0,
     "type": "Weaponskill",
@@ -419,9 +392,9 @@
     "id": 23,
     "name": "Stealth L",
     "amount": 1,
-    "mneme1": {"one":"Stealth L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Stealth L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Blend in with your surroundings, making it impossible for most enemies to detect you, but reducing movement speed by 50%. Has no effect on certain enemies with special sight. Cannot be executed while in combat. Effect ends upon use of any action other than Sprint, or upon reuse.",
     "use": 50,
     "type": "Ability",
@@ -432,9 +405,9 @@
     "id": 24,
     "name": "Aetherial Manipulation L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Martialist"},
-    "mneme2": {"one":"Feint L"},
-    "mneme3": {"one":"Backstep L"},
+    "mneme1": ["Wisdom of the Martialist"],
+    "mneme2": ["Feint L"],
+    "mneme3": ["Backstep L"],
     "description": "Rush to a target's side. Unable to cast if bound.",
     "use": 99,
     "type": "Ability",
@@ -445,9 +418,9 @@
     "id": 25,
     "name": "Backstep L",
     "amount": 1,
-    "mneme1": {"one":"Backstep L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Backstep L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Jump 10 yalms back from current position. Cannot be executed while bound.",
     "use": 99,
     "type": "Ability",
@@ -458,9 +431,9 @@
     "id": 26,
     "name": "Tranquilizer L",
     "amount": 1,
-    "mneme1": {"one":"Tranquilizer L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Tranquilizer L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Stuns target. Duration: 8s",
     "use": 50,
     "type": "Ability",
@@ -472,20 +445,17 @@
     "name": "Bloodbath L",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Bloodbath L",
-      "two":"Wisdom of the Martialist"
-    },
+    ["Bloodbath L",
+      "Wisdom of the Martialist"
+    ],
     "mneme2":
-    {
-      "one":"",
-      "two":"Wisdom of the Martialist"
-    },
+    ["",
+      "Wisdom of the Martialist"
+    ],
     "mneme3":
-    {
-      "one":"",
-      "two":"Cure L"
-    },
+    ["",
+      "Cure L"
+    ],
     "description": "Converts a portion of damage dealt into HP. Duration: 45s",
     "use": 30,
     "type": "Ability",
@@ -496,9 +466,9 @@
     "id": 28,
     "name": "Rejuvenate L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Martialist"},
-    "mneme2": {"one":"Wisdom of the Aetherweaver"},
-    "mneme3": {"one":"Cure L"},
+    "mneme1": ["Wisdom of the Martialist"],
+    "mneme2": ["Wisdom of the Aetherweaver"],
+    "mneme3": ["Cure L"],
     "description": "Instantly restores 500 TP and 50% of maximum MP.",
     "use": 50,
     "type": "Ability",
@@ -509,9 +479,9 @@
     "id": 29,
     "name": "Haymaker L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Martialist"},
-    "mneme2": {"one":"Incense L"},
-    "mneme3": {"one":"Featherfoot L"},
+    "mneme1": ["Wisdom of the Martialist"],
+    "mneme2": ["Incense L"],
+    "mneme3": ["Featherfoot L"],
     "description": "Delivers an attack with a potency of 300. Can only be executed immediately after evading an attack. Additional Effect: Slow +20% Duration: 30s",
     "use": 50,
     "type": "Ability",
@@ -522,9 +492,9 @@
     "id": 30,
     "name": "Rapid Recast L",
     "amount": 1,
-    "mneme1": {"one":"Feint L"},
-    "mneme2": {"one":"Esuna L"},
-    "mneme3": {"one":"Cure L"},
+    "mneme1": ["Feint L"],
+    "mneme2": ["Esuna L"],
+    "mneme3": ["Cure L"],
     "description": "Shortens recast time for next ability used by 50%. Duration: 15s",
     "use": 50,
     "type": "Ability",
@@ -535,9 +505,9 @@
     "id": 31,
     "name": "Cure L",
     "amount": 1,
-    "mneme1": {"one":"Cure L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Cure L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Restores target's HP. Cure Potency: 9,000",
     "use": 0,
     "type": "Spell",
@@ -549,23 +519,20 @@
     "name": "Cure L II",
     "amount": 3,
     "mneme1":
-    {
-      "one":"Raise L",
-      "two":"Cure L",
-      "three":"Wisdom of the Ordained"
-    },
+    ["Raise L",
+      "Cure L",
+      "Wisdom of the Ordained"
+    ],
     "mneme2":
-    {
-      "one":"Raise L",
-      "two":"Cure L",
-      "three":"Cure L"
-    },
+    ["Raise L",
+      "Cure L",
+      "Cure L"
+    ],
     "mneme3":
-    {
-      "one":"Raise L",
-      "two":"Cure L",
-      "three":""
-    },
+    ["Raise L",
+      "Cure L",
+      ""
+    ],
     "description": "Restores target's HP. Cure Potency: 12,000",
     "use": 50,
     "type": "Ability",
@@ -577,23 +544,20 @@
     "name": "Stoneskin L",
     "amount": 3,
     "mneme1":
-    {
-      "one":"Protect L",
-      "two":"Protect L",
-      "three":"Shell L"
-    },
+    ["Protect L",
+      "Protect L",
+      "Shell L"
+    ],
     "mneme2":
-    {
-      "one":"Protect L",
-      "two":"Shell L",
-      "three":"Shell L"
-    },
+    ["Protect L",
+      "Shell L",
+      "Shell L"
+    ],
     "mneme3":
-    {
-      "one":"Protect L",
-      "two":"",
-      "three":"Shell L"
-    },
+    ["Protect L",
+      "",
+      "Shell L"
+    ],
     "description": "Creates a barrier around target that absorbs damage totaling 10% of target's maximum HP. Duration: 30s",
     "use": 99,
     "type": "Spell",
@@ -605,20 +569,17 @@
     "name": "Cure L III",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Cure L II",
-      "two":"Wisdom of the Ordained"
-    },
+    ["Cure L II",
+      "Wisdom of the Ordained"
+    ],
     "mneme2":
-    {
-      "one":"Cure L II",
-      "two":"Cure L"
-    },
+    ["Cure L II",
+      "Cure L"
+    ],
     "mneme3":
-    {
-      "one":"",
-      "two":"Cure L"
-    },
+    ["",
+      "Cure L"
+    ],
     "description": "Restores HP of target and all party members nearby target. Cure Potency: 9,000",
     "use": 50,
     "type": "Spell",
@@ -630,20 +591,17 @@
     "name": "Regen L",
     "amount": 2,
     "mneme1":
-    {
-      "one":"Cure L",
-      "two":"Cure L II"
-    },
+    ["Cure L",
+      "Cure L II"
+    ],
     "mneme2":
-    {
-      "one":"Cure L",
-      "two":"Feint L"
-    },
+    ["Cure L",
+      "Feint L"
+    ],
     "mneme3":
-    {
-      "one":"Feint L",
-      "two":""
-    },
+    ["Feint L",
+      ""
+    ],
     "description": "Grants healing over time effect to target. Cure Potency: 2,500 Duration: 21s",
     "use": 99,
     "type": "Spell",
@@ -654,9 +612,9 @@
     "id": 36,
     "name": "Esuna L",
     "amount": 1,
-    "mneme1": {"one":"Esuna L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Esuna L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Removes a single detrimental effect from target.",
     "use": 0,
     "type": "Spell",
@@ -667,9 +625,9 @@
     "id": 37,
     "name": "Incense L",
     "amount": 1,
-    "mneme1": {"one":"Incense L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Incense L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Gesture threateningly, placing yourself at the top of a target's enmity list and increasing enmity generation. Duration: 15s",
     "use": 0,
     "type": "Ability",
@@ -680,9 +638,9 @@
     "id": 38,
     "name": "Raise L",
     "amount": 1,
-    "mneme1": {"one":"Raise L"},
-    "mneme2": {"one":""},
-    "mneme3": {"one":""},
+    "mneme1": ["Raise L"],
+    "mneme2": [""],
+    "mneme3": [""],
     "description": "Resurrects target to a weakened state.",
     "use": 99,
     "type": "Spell",
@@ -693,9 +651,9 @@
     "id": 39,
     "name": "Bravery L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Skirmisher"},
-    "mneme2": {"one":"Wisdom of the Guardian"},
-    "mneme3": {"one":"Wisdom of the Ordained"},
+    "mneme1": ["Wisdom of the Skirmisher"],
+    "mneme2": ["Wisdom of the Guardian"],
+    "mneme3": ["Wisdom of the Ordained"],
     "description": "Increases target's damage dealt by 10%. Duration: 100s",
     "use": 99,
     "type": "Spell",
@@ -706,9 +664,9 @@
     "id": 40,
     "name": "Solid Shield L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Guardian"},
-    "mneme2": {"one":"Protect L"},
-    "mneme3": {"one":"Stoneskin L"},
+    "mneme1": ["Wisdom of the Guardian"],
+    "mneme2": ["Protect L"],
+    "mneme3": ["Stoneskin L"],
     "description": "Reduces physical damage taken by 99%. Duration: 8s",
     "use": 30,
     "type": "Ability",
@@ -719,9 +677,9 @@
     "id": 41,
     "name": "Spell Shield L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Guardian"},
-    "mneme2": {"one":"Shell L"},
-    "mneme3": {"one":"Stoneskin L"},
+    "mneme1": ["Wisdom of the Guardian"],
+    "mneme2": ["Shell L"],
+    "mneme3": ["Stoneskin L"],
     "description": "Reduces magic damage taken by 99%. Duration: 8s",
     "use": 30,
     "type": "Ability",
@@ -732,9 +690,9 @@
     "id": 42,
     "name": "Reflect L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Ordained"},
-    "mneme2": {"one":"Protect L"},
-    "mneme3": {"one":"Shell L"},
+    "mneme1": ["Wisdom of the Ordained"],
+    "mneme2": ["Protect L"],
+    "mneme3": ["Shell L"],
     "description": "Creates a magic-reflecting barrier around self or party member. Duration: 10s",
     "use": 99,
     "type": "Spell",
@@ -745,9 +703,9 @@
     "id": 43,
     "name": "Smite L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Skirmisher"},
-    "mneme2": {"one":"Spirit Dart L"},
-    "mneme3": {"one":"Tranquilizer L"},
+    "mneme1": ["Wisdom of the Skirmisher"],
+    "mneme2": ["Spirit Dart L"],
+    "mneme3": ["Tranquilizer L"],
     "description": "Delivers an attack with a potency of 1000. Can only be executed when your HP is below 50%. Additional Effect: Restores an amount of own HP proportional to damage dealt",
     "use": 30,
     "type": "Ability",
@@ -758,9 +716,9 @@
     "id": 44,
     "name": "Refresh L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Aetherweaver"},
-    "mneme2": {"one":"Wisdom of the Ordained"},
-    "mneme3": {"one":"Cure L II"},
+    "mneme1": ["Wisdom of the Aetherweaver"],
+    "mneme2": ["Wisdom of the Ordained"],
+    "mneme3": ["Cure L II"],
     "description": "Increases the amount of magia aether regenerated over time by self and nearby party members. Duration: 30s",
     "use": 99,
     "type": "Spell",
@@ -771,9 +729,9 @@
     "id": 45,
     "name": "Banish L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Aetherweaver"},
-    "mneme2": {"one":"Dispel L"},
-    "mneme3": {"one":"Dispel L"},
+    "mneme1": ["Wisdom of the Aetherweaver"],
+    "mneme2": ["Dispel L"],
+    "mneme3": ["Dispel L"],
     "description": "Deals unaspected damage with a potency of 200. Additional Effect: Afflicts undead targets with Banish L, increasing damage taken by 12% Duration: 60s",
     "use": 99,
     "type": "Spell",
@@ -784,9 +742,9 @@
     "id": 46,
     "name": "Banish L III",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Ordained"},
-    "mneme2": {"one":"Dispel L"},
-    "mneme3": {"one":"Dispel L"},
+    "mneme1": ["Wisdom of the Ordained"],
+    "mneme2": ["Dispel L"],
+    "mneme3": ["Dispel L"],
     "description": "Deals unaspected damage with a potency of 150 to target and all enemies nearby it. Additional Effect: Afflicts undead targets with Banish L, increasing damage taken by 12% Duration: 60s",
     "use": 50,
     "type": "Spell",
@@ -797,9 +755,9 @@
     "id": 47,
     "name": "Magic Burst L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Remembered"},
-    "mneme2": {"one":"Wisdom of the Ordained"},
-    "mneme3": {"one":"Stoneskin L"},
+    "mneme1": ["Wisdom of the Remembered"],
+    "mneme2": ["Wisdom of the Ordained"],
+    "mneme3": ["Stoneskin L"],
     "description": "Increases spell damage by 100% while increasing MP cost. Duration: 20s",
     "use": 5,
     "type": "Ability",
@@ -810,9 +768,9 @@
     "id": 48,
     "name": "Double Edge L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Guardian"},
-    "mneme2": {"one":"Bloodbath L"},
-    "mneme3": {"one":"Wisdom of the Skirmisher"},
+    "mneme1": ["Wisdom of the Guardian"],
+    "mneme2": ["Bloodbath L"],
+    "mneme3": ["Wisdom of the Skirmisher"],
     "description": "Increases physical damage dealt while dealing damage to self over time. Stacks increase every 3 seconds, up to a maximum of 16. For each stack, physical damage dealt is increased by 15%, and potency of damage dealt to self increases by 1,200. Duration: 48s",
     "use": 5,
     "type": "Ability",
@@ -823,9 +781,9 @@
     "id": 49,
     "name": "Eagle Eye Shot L",
     "amount": 1,
-    "mneme1": {"one":"Wisdom of the Remembered"},
-    "mneme2": {"one":"Wisdom of the Skirmisher"},
-    "mneme3": {"one":"Spirit Dart L"},
+    "mneme1": ["Wisdom of the Remembered"],
+    "mneme2": ["Wisdom of the Skirmisher"],
+    "mneme3": ["Spirit Dart L"],
     "description": "Delivers a ranged attack with a potency of 80. Potency increases up to 1,000% the lower the target's HP. Generates significant enmity upon use.",
     "use": 20,
     "type": "Weaponskill",

@@ -13,16 +13,19 @@ function importAll(r) {
 
 function Square(props) {
   return (
-    <button className="square" onClick={props.onClick}>
+    <button className="square" onClick={props.onClick}
+      onMouseOut={props.onMouseOut}
+      onMouseOver={props.onMouseOver}
+    >
       <img src={[props.image]} alt=""/>
     </button>
   )
 }
 
 function Mneme(props) {
-  let v = props.check ? "mneme-on" : "mneme-off";
+  let v = props.check ? "-on" : "-off";
   return (
-    <tr className={v}>
+    <tr className={data[props.value].logogram + v}>
       <td>
         <img src= {images[data[props.value].type + "_mneme.png"]}/>
         {data[props.value].name}
@@ -33,9 +36,9 @@ function Mneme(props) {
 }
 
 function Logo(props) {
-  let v = props.check ? "logos-on" : "logos-off";
+  let v = props.check ? "-on" : "-off";
   return (
-    <tr className={v}>
+    <tr className={data[props.value].logogram + v}>
       <td>
         <img src= {images[data[props.value].logogram + ".png"]}/>
         {data[props.value].logogram}
@@ -44,11 +47,73 @@ function Logo(props) {
   )
 }
 
+const label = flipped => {
+	if (flipped === null) {
+    	return <h4>Hover over an action to see details.</h4>;
+  }
+  let mnem = [];
+  let c = "";
+  for(let i = 0; i < combos[flipped].amount; i++){
+    if(i%2==0){
+      c = "mo";
+    } else {c = "me";}
+    mnem.push(
+      <>
+      <div className={"col-4 " + c}>
+      <p>{combos[flipped].mneme1[i]}</p>
+      </div>
+      <div className={"col-4 " + c}>
+      <p>{combos[flipped].mneme2[i]}</p>
+      </div>
+      <div className={"col-4 " + c}>
+      <p>{combos[flipped].mneme3[i]}</p>
+      </div>
+      </>
+    );
+  }
+
+    return (
+        <div className=" info-box row">
+          <div className="col-6">
+            <p className="title">Name: {combos[flipped].name}</p>
+          </div>
+          <div className="col-3">
+            <p className="title">Type: {combos[flipped].type}</p>
+          </div>
+          <div className="col-3">
+            <p className="title">Uses: {combos[flipped].use}</p>
+          </div>
+          <div className="col-12">
+          <p className="title">{combos[flipped].description}</p>
+          </div>
+          <div className="col-12">
+          <p className="title">Jobs: {combos[flipped].jobs}</p>
+          </div>
+          <div className="col-4 me">
+          <p>Mneme 1</p>
+          </div>
+          <div className="col-4 me">
+          <p>Mneme 2</p>
+          </div>
+          <div className="col-4 me">
+          <p>Mneme 3</p>
+          </div>
+          {mnem}
+
+        </div>
+    );
+}
+
+
+
 class Logogram extends React.Component {
   renderGram() {
     let row = [];
     for(let j = 0; j < 24; j++) {
-      row.push(<Logo value={j} check={this.props.checkLogo[j]} key={j}/>);
+      if(j === 0 || j > 0 && (data[j].logogram !== data[j-1].logogram)){
+        console.log(data[j].type);
+        row.push(<Logo value={j} check={this.props.checkLogo[j]} key={j}/>);
+    }
     }
     return <table className="logos-table"><tbody>{row}</tbody></table>;
   }
@@ -85,6 +150,8 @@ class Mnemes extends React.Component {
 
 class Board extends React.Component {
 
+
+
   renderRow(i) {
     let row = [];
     for(let j = i; j < i+10; j++){
@@ -93,6 +160,8 @@ class Board extends React.Component {
         key={j}
         onClick={() => this.props.onClick(j)}
         image={this.props.image[j]}
+        onMouseOut={() => this.props.onMouseOut(j)}
+        onMouseOver={() => this.props.onMouseOver(j)}
       /></td>);
     }
     return row;
@@ -128,6 +197,7 @@ class Game extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      width: window.innerWidth,
       squares: Array(50).fill(null),
       mnemes: data.map(function(movie){
         return movie.name;
@@ -142,7 +212,28 @@ class Game extends React.Component {
       checkLogo:Array(24).fill(1),
       count: 0,
       totals: calculcateTotal(Array(50).fill(null)),
+      flipped: null,
     };
+  }
+
+  componentWillMount() {
+    window.addEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.handleWindowSizeChange);
+  }
+
+  handleWindowSizeChange = () => {
+    this.setState({ width: window.innerWidth });
+  };
+
+  onMouseOut(i) {
+    this.setState({flipped: i});
+  }
+
+  onMouseOver(i) {
+    this.setState({flipped: i});
   }
 
   handleClick(i) {
@@ -274,9 +365,12 @@ class Game extends React.Component {
   }
 
   render() {
+
     const numbers1 = [];
     const numbers2 = [];
     const numbers3 = [];
+    const { width } = this.state;
+    const isMobile = width <= 768;
 
     for(let i = 1; i <=20;i++){
       if(i <= this.state.count){
@@ -324,26 +418,98 @@ class Game extends React.Component {
         numbers3.push(<li  className = "dotoff" key={i}>{i}</li>);
       }
     }
-    return (
-      <div className="container-fluid">
-      <nav className="navbar navbar-light bg-light">
 
-</nav>
+    if(isMobile) {
+      return (
+        <div className="container-fluid">
+          <div className="row" id="header-content" style={ {backgroundImage: "url(" + images['banner.png'] + ")"}}>
+            <div >
+              <img src={require('./img/logo.png')} className={"img-fluid"}/>
+            </div>
+          </div>
+          <div className="row">
+              <div className="col-2">
+              <Logogram
+                logograms={this.state.logograms}
+                checkLogo={this.state.checkLogo}
+              />
+              </div>
+              <div className="col-2">
+              <Mnemes
+                mnemes={this.state.mnemes}
+                checkMneme={this.state.checkMneme}
+                totals={this.state.totals}
+              />
+              </div>
+            <div className="game-board col-8">
+              <div className="row">
+                <div className="col-12">
+                  <div className="table">
+                    <h2>Logos Action Log</h2>
+                    <h4>ACTIONS</h4>
+                    <Board
+                      squares={this.state.squares}
+                      image={this.state.image}
+                      onClick={(i) => this.handleClick(i)}
+                      onMouseOut={(i) => this.onMouseOut(i)}
+                      onMouseOver={(i) => this.onMouseOver(i)}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12">
+                  <h3>Collected</h3>
+                  <ul className="list-inline">
+                    {numbers1}
+                  </ul>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12">
+                  <ul className="list-inline">
+                    {numbers2}
+                  </ul>
+                </div>
+              </div>
+              <div className="row">
+                <div className="col-12">
+                  <ul className="list-inline">
+                    {numbers3}
+                  </ul>
+                </div>
+              </div>
+
+                  {label(this.state.flipped)}
+
+              </div>
+          </div>
+        </div>
+      );
+    } else {
+    return (
+
+      <div className="container-fluid">
+        <div className="row" id="header-content" style={ {backgroundImage: "url(" + images['banner.png'] + ")"}}>
+          <div >
+            <img src={require('./img/logo.png')} className={"img-fluid"}/>
+          </div>
+        </div>
         <div className="row">
-          <div className="col-3">
+            <div className="col-2">
             <Logogram
               logograms={this.state.logograms}
               checkLogo={this.state.checkLogo}
             />
-          </div>
-          <div className="col-3">
+            </div>
+            <div className="col-2">
             <Mnemes
               mnemes={this.state.mnemes}
               checkMneme={this.state.checkMneme}
               totals={this.state.totals}
             />
-          </div>
-          <div className="game-board col-6">
+            </div>
+          <div className="game-board col-8">
             <div className="row">
               <div className="col-12">
                 <div className="tabletitle">
@@ -353,6 +519,8 @@ class Game extends React.Component {
                     squares={this.state.squares}
                     image={this.state.image}
                     onClick={(i) => this.handleClick(i)}
+                    onMouseOut={(i) => this.onMouseOut(i)}
+                    onMouseOver={(i) => this.onMouseOver(i)}
                   />
                 </div>
               </div>
@@ -379,10 +547,17 @@ class Game extends React.Component {
                 </ul>
               </div>
             </div>
+
+                {label(this.state.flipped)}
+
             </div>
         </div>
       </div>
     );
+
+
+
+}
   }
 }
 
@@ -401,9 +576,9 @@ function calculateRemaining(squares) {
     if(squares[i]) {
 
     } else {
-      remaining.add(combos[i].mneme1.one);
-      remaining.add(combos[i].mneme2.one);
-      remaining.add(combos[i].mneme3.one);
+      remaining.add(combos[i].mneme1[0]);
+      remaining.add(combos[i].mneme2[0]);
+      remaining.add(combos[i].mneme3[0]);
     }
   }
 
@@ -416,9 +591,9 @@ function calculcateTotal(squares) {
     if(squares[i]) {
 
     } else {
-      total.push(combos[i].mneme1.one);
-      total.push(combos[i].mneme2.one);
-      total.push(combos[i].mneme3.one);
+      total.push(combos[i].mneme1[0]);
+      total.push(combos[i].mneme2[0]);
+      total.push(combos[i].mneme3[0]);
     }
   }
   return counts(total);
