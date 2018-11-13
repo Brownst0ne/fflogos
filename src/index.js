@@ -111,7 +111,6 @@ class Logogram extends React.Component {
     let row = [];
     for(let j = 0; j < 24; j++) {
       if(j === 0 || j > 0 && (data[j].logogram !== data[j-1].logogram)){
-        console.log(data[j].type);
         row.push(<Logo value={j} check={this.props.checkLogo[j]} key={j}/>);
     }
     }
