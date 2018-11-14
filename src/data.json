@@ -2,144 +2,168 @@
     "id": 0,
     "name": "Wisdom of the Aetherweaver",
     "logogram": "Conceptual",
-    "type": "Offensive"
+    "type": "Offensive",
+    "source": "Current or higher level Sprites"
   },
   {
     "id": 1,
     "name": "Wisdom of the Martialist",
     "logogram": "Conceptual",
-    "type": "Offensive"
+    "type": "Offensive",
+    "source": "Current or higher level Sprites"
   },
   {
     "id": 2,
     "name": "Wisdom of the Platebearer",
     "logogram": "Conceptual",
-    "type": "Protective"
+    "type": "Protective",
+    "source": "Current or higher level Sprites"
   },
   {
     "id": 3,
     "name": "Incense L",
     "logogram": "Conceptual",
-    "type": "Protective"
+    "type": "Protective",
+    "source": "Current or higher level Sprites"
   },
   {
     "id": 4,
     "name": "Cure L",
     "logogram": "Conceptual",
-    "type": "Curative"
+    "type": "Curative",
+    "source": "Current or higher level Sprites"
   },
   {
     "id": 5,
     "name": "Backstep L",
     "logogram": "Conceptual",
-    "type": "Tactical"
+    "type": "Tactical",
+    "source": "Current or higher level Sprites"
   },
   {
     "id": 6,
     "name": "Paralyze L",
     "logogram": "Conceptual",
-    "type": "Inimical"
+    "type": "Inimical",
+    "source": "Current or higher level Sprites"
   },
   {
     "id": 7,
     "name": "Esuna L",
     "logogram": "Fundamental",
-    "type": "Curative"
+    "type": "Curative",
+    "source": "Bronze bunny chests or 30 Chain"
   },
   {
     "id": 8,
     "name": "Raise L",
     "logogram": "Fundamental",
-    "type": "Curative"
+    "type": "Curative",
+    "source": "Bronze bunny chests or 30 Chain"
   },
   {
     "id": 9,
     "name": "Feint L",
     "logogram": "Fundamental",
-    "type": "Tactical"
+    "type": "Tactical",
+    "source": "Bronze bunny chests or 30 Chain"
   },
   {
     "id": 10,
     "name": "Tranquilizer L",
     "logogram": "Fundamental",
-    "type": "Inimical"
+    "type": "Inimical",
+    "source": "Bronze bunny chests or 30 Chain"
   },
   {
     "id": 11,
     "name": "Protect L",
     "logogram": "Fundamental",
-    "type": "Mitigative"
+    "type": "Mitigative",
+    "source": "Bronze bunny chests or 30 Chain"
   },
   {
     "id": 12,
     "name": "Wisdom of the Skirmisher",
     "logogram": "Offensive",
-    "type": "Offensive"
+    "type": "Offensive",
+    "source": "Gold bunny chests"
   },
   {
     "id": 13,
     "name": "Bloodbath L",
     "logogram": "Offensive",
-    "type": "Offensive"
+    "type": "Offensive",
+    "source": "Gold bunny chests"
   },
   {
     "id": 14,
     "name": "Wisdom of the Guardian",
     "logogram": "Protective",
-    "type": "Protective"
+    "type": "Protective",
+    "source": "Gold bunny chests"
   },
   {
     "id": 15,
     "name": "Wisdom of the Remembered",
     "logogram": "Protective",
-    "type": "Protective"
+    "type": "Protective",
+    "source": "Gold bunny chests"
   },
   {
     "id": 16,
     "name": "Wisdom of the Ordained",
     "logogram": "Curative",
-    "type": "Curative"
+    "type": "Curative",
+    "source": "Silver bunny chests"
   },
   {
     "id": 17,
     "name": "Cure L II",
     "logogram": "Curative",
-    "type": "Curative"
+    "type": "Curative",
+    "source": "Silver bunny chests"
   },
   {
     "id": 18,
     "name": "Featherfoot L",
     "logogram": "Tactical",
-    "type": "Tactical"
+    "type": "Tactical",
+    "source": "Heat lockboxes"
   },
   {
     "id": 19,
     "name": "Stealth L",
     "logogram": "Tactical",
-    "type": "Tactical"
+    "type": "Tactical",
+    "source": "Heat lockboxes"
   },
   {
     "id": 20,
     "name": "Spirit Dart L",
     "logogram": "Inimical",
-    "type": "Inimical"
+    "type": "Inimical",
+    "source": "Level 50+ sprite adaptations"
   },
   {
     "id": 21,
     "name": "Dispel L",
     "logogram": "Inimical",
-    "type": "Inimical"
+    "type": "Inimical",
+    "source": ""
   },
   {
     "id": 22,
     "name": "Shell L",
     "logogram": "Mitigative",
-    "type": "Mitigative"
+    "type": "Mitigative",
+    "source": "Gold bunny chests"
   },
   {
     "id": 23,
     "name": "Stoneskin L",
     "logogram": "Mitigative",
-    "type": "Mitigative"
+    "type": "Mitigative",
+    "source": "Gold bunny chests"
   }
 ]

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import data from './data.json';
 import combos from './combos.json';
+import Tooltip from 'react-simple-tooltip';
 const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 function importAll(r) {
@@ -26,7 +27,7 @@ function Mneme(props) {
   let v = props.check ? "-on" : "-off";
   return (
     <tr className={data[props.value].logogram + v}>
-      <td>
+      <td style={{width: "100%"}}>
         <img src= {images[data[props.value].type + "_mneme.png"]} alt=""/>
         {data[props.value].name}
       </td>
@@ -111,7 +112,22 @@ class Logogram extends React.Component {
     let row = [];
     for(let j = 0; j < 24; j++) {
       if(j === 0 ||( j > 0 && (data[j].logogram !== data[j-1].logogram))){
-        row.push(<Logo value={j} check={this.props.checkLogo[j]} key={j}/>);
+        row.push(<Tooltip
+                    placement="right" style={{width: "100%"}}
+                    content={
+                      <div>
+                        <p style={{width:"200px"}}>{data[j].logogram}</p>
+                        <p>Obtained from:</p>
+                        <p>{data[j].source}</p>
+                      </div>
+                    }
+                  >
+                  <Logo
+                    value={j}
+                    check={this.props.checkLogo[j]}
+                    key={j}
+                  />
+                </Tooltip>);
     }
     }
     return <table className="logos-table"><tbody>{row}</tbody></table>;
@@ -120,6 +136,7 @@ class Logogram extends React.Component {
     return (
       <div>
         <div className="logo-row">
+
           {this.renderGram()}
         </div>
       </div>
@@ -131,7 +148,24 @@ class Mnemes extends React.Component {
   renderMneme() {
     let row = [];
     for(let j = 0; j < 24; j++){
-      row.push(<Mneme value={j} totals={this.props.totals[data[j].name]} check={this.props.checkMneme[j]} key={j}/>);
+      row.push(<Tooltip
+                placement="right"
+                radius="10"
+                padding="15"
+                style={{width: "100%"}}
+                content={
+                  <div>
+                    <p style={{width:"200px"}}>{data[j].logogram}</p>
+                    <p>Obtained from:</p>
+                    <p>{data[j].source}</p>
+                  </div>
+                }
+
+               >
+                <Mneme value={j}
+                  totals={this.props.totals[data[j].name]}
+                  check={this.props.checkMneme[j]}
+                  key={j}/></Tooltip>);
     }
     return <table className="menme-table"><tbody>{row}</tbody></table>;
   }

@@ -124,6 +124,11 @@ p.desc {
 
 }
 
+.mneme-table {
+  border-radius: 20%;
+  background: white;
+}
+
 .Conceptual-on {
   background:#A52175;
   box-shadow:0px 0px 2px 2px #490E35;
@@ -174,42 +179,42 @@ p.desc {
 
 .Conceptual-off {
   background:#4C4D4C;
-  box-shadow:0px 0px 2px 2px #79C7EC;
+  box-shadow:0px 0px 2px 2px #490E35;
 }
 
 .Fundamental-off {
   background:#4C4D4C;
-  box-shadow:0px 0px 2px 2px #79C7EC;
+  box-shadow:0px 0px 2px 2px #AD4500;
 }
 
 .Offensive-off {
   background:#4C4D4C;
-  box-shadow:0px 0px 2px 2px #79C7EC;
+  box-shadow:0px 0px 2px 2px #932117;
 }
 
 .Protective-off {
   background:#4C4D4C;
-  box-shadow:0px 0px 2px 2px #79C7EC;
+  box-shadow:0px 0px 2px 2px #1351B5;
 }
 
 .Curative-off {
   background:#4C4D4C;
-  box-shadow:0px 0px 2px 2px #79C7EC;
+  box-shadow:0px 0px 2px 2px #003A00;
 }
 
 .Tactical-off {
   background:#4C4D4C;
-  box-shadow:0px 0px 2px 2px #79C7EC;
+  box-shadow:0px 0px 2px 2px #6E3100;
 }
 
 .Inimical-off {
   background:#4C4D4C;
-  box-shadow:0px 0px 2px 2px #79C7EC;
+  box-shadow:0px 0px 2px 2px #78369D;
 }
 
 .Mitigative-off {
   background:#4C4D4C;
-  box-shadow:0px 0px 2px 2px #79C7EC;
+  box-shadow:0px 0px 2px 2px #013145;
 }
 
 
