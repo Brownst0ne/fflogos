@@ -18,7 +18,7 @@ function Square(props) {
       onMouseOut={props.onMouseOut}
       onMouseOver={props.onMouseOver}
     >
-      <img src={[props.image]} alt=""/>
+      <img src={props.image} alt=""/>
     </button>
   )
 }
@@ -26,13 +26,40 @@ function Square(props) {
 function Mneme(props) {
   let v = props.check ? "-on" : "-off";
   return (
-    <tr className={data[props.value].logogram + v}>
-      <td style={{width: "100%"}}>
-        <img src= {images[data[props.value].type + "_mneme.png"]} alt=""/>
-        {data[props.value].name}
-      </td>
-      <td className={"nums"}>{props.totals}</td>
+    <>
+    <tr style={{width: "100%"}} className={data[props.value].logogram + v}>
+
+        <td style={{width: "100%"}}>
+        <Tooltip
+          placement="right" style={{width: "100%"}}
+          content={
+            <div>
+              <p style={{width:"200px"}}>{data[props.value].logogram}</p>
+              <p>Obtained from:</p>
+              <p>{data[props.value].source}</p>
+            </div>
+          }
+        >
+          <img src= {images[data[props.value].type + "_mneme.png"]} alt=""/>
+          {data[props.value].name}
+          </Tooltip>
+        </td>
+        <td >{props.totals}</td>
     </tr>
+    <tr>
+      <td>
+      <div className="input-group mb-3">
+        <div className="input-group-prepend">
+          <button className="btn btn-dark btn-sm" onClick={props.decrement}><i className="fa fa-minus"></i></button>
+        </div>
+        <input type="text" className="form-control form-control-sm" value={props.owned}  min="0" readonly="readonly"/>
+        <div className="input-group-prepend">
+          <button className="btn btn-dark btn-sm" onClick={props.increment}><i className="fa fa-plus"></i></button>
+        </div>
+      </div>
+      </td>
+    </tr>
+    </>
   )
 }
 
@@ -40,10 +67,23 @@ function Logo(props) {
   let v = props.check ? "-on" : "-off";
   return (
     <tr className={data[props.value].logogram + v}>
+
       <td>
+      <Tooltip
+                  placement="right" style={{width: "100%"}}
+                  content={
+                    <div>
+                      <p style={{width:"200px"}}>{data[props.value].logogram}</p>
+                      <p>Obtained from:</p>
+                      <p>{data[props.value].source}</p>
+                    </div>
+                  }
+                >
         <img src= {images[data[props.value].logogram + ".png"]} alt=""/>
         {data[props.value].logogram}
+        </Tooltip>
       </td>
+
     </tr>
   )
 }
@@ -112,22 +152,11 @@ class Logogram extends React.Component {
     let row = [];
     for(let j = 0; j < 24; j++) {
       if(j === 0 ||( j > 0 && (data[j].logogram !== data[j-1].logogram))){
-        row.push(<Tooltip
-                    placement="right" style={{width: "100%"}}
-                    content={
-                      <div>
-                        <p style={{width:"200px"}}>{data[j].logogram}</p>
-                        <p>Obtained from:</p>
-                        <p>{data[j].source}</p>
-                      </div>
-                    }
-                  >
-                  <Logo
+        row.push(<Logo
                     value={j}
                     check={this.props.checkLogo[j]}
                     key={j}
-                  />
-                </Tooltip>);
+                  />);
     }
     }
     return <table className="logos-table"><tbody>{row}</tbody></table>;
@@ -148,24 +177,13 @@ class Mnemes extends React.Component {
   renderMneme() {
     let row = [];
     for(let j = 0; j < 24; j++){
-      row.push(<Tooltip
-                placement="right"
-                radius="10"
-                padding="15"
-                style={{width: "100%"}}
-                content={
-                  <div>
-                    <p style={{width:"200px"}}>{data[j].logogram}</p>
-                    <p>Obtained from:</p>
-                    <p>{data[j].source}</p>
-                  </div>
-                }
-
-               >
-                <Mneme value={j}
+      row.push(<Mneme value={j}
                   totals={this.props.totals[data[j].name]}
+                  owned={this.props.owned[j]}
+                  increment={() => this.props.increment(j)}
+                  decrement={() => this.props.decrement(j)}
                   check={this.props.checkMneme[j]}
-                  key={j}/></Tooltip>);
+                  key={j}/>);
     }
     return <table className="menme-table"><tbody>{row}</tbody></table>;
   }
@@ -237,18 +255,57 @@ class Game extends React.Component {
       mnemes: data.map(function(movie){
         return movie.name;
       }),
-      image: combos.map(function(movie){
-        return images["empty.png"];
-      }),
+      image: Array(50).fill(null),
       logograms: data.map(function(d){
         return d.logogram;
       }),
       checkMneme:Array(24).fill(1),
       checkLogo:Array(24).fill(1),
       count: 0,
-      totals: calculcateTotal(Array(50).fill(null)),
+      totals: Array(50).fill(null),
       flipped: null,
+      owned: Array(50).fill(0),
+      possible: Array(50).fill(0),
     };
+  }
+
+  checkPossible(amount, totals, image) {
+
+    let diff = new Map();
+    for(let i = 0; i < 24; i++) {
+      if(totals[data[i].name]) {
+        diff.set(data[i].name, amount[i]);
+      }
+    }
+
+    for(let i = 0; i < 50; i++) {
+
+      for(let j = 0; j < combos[i].amount; j++) {
+        let cnt = 0;
+        let amounts = new Map(diff);
+        if(amounts.get(combos[i].mneme1[j])) {
+          cnt++;
+          amounts.set(combos[i].mneme1[j], amounts.get(combos[i].mneme1[j])-1);
+        }
+        if(amounts.get(combos[i].mneme2[j]) || combos[i].mneme2[j] === "") {
+          amounts.set(combos[i].mneme2[j], amounts.get(combos[i].mneme2[j])-1);
+          cnt++;
+        }
+        if(amounts.get(combos[i].mneme2[j]) || combos[i].mneme3[j] === "") {
+          cnt++;
+        }
+        if(cnt === 3){
+          if(image[i] === images['empty.png']) {
+            image[i] = images['empty-inverse.png'];
+          }
+        } else {
+          if(image[i] === images['empty-inverse.png']) {
+            image[i] = images['empty.png'];
+          }
+        }
+      }
+    }
+    return image;
   }
 
   saveState() {
@@ -260,18 +317,40 @@ class Game extends React.Component {
 
   loadState() {
     for (let key in this.state) {
+      if(key === 'image') {
+        if(localStorage.hasOwnProperty(key)) {
+          localStorage.removeItem(key);
+        }
+        continue;
+      }
       if(localStorage.hasOwnProperty(key)) {
         let value = localStorage.getItem(key);
 
         try {
           value = JSON.parse(value);
-
           this.setState({[key]: value})
         } catch (e) {
           this.setState({[key]: value})
         }
       }
+
     }
+    try {
+      let owned = JSON.parse(localStorage.getItem('owned'));
+      let squares = JSON.parse(localStorage.getItem('squares'));
+      let image = Array(50).fill(images['empty.png']);
+      let totals = JSON.parse(localStorage.getItem('totals'));
+      for(let i = 0; i < 50; i++) {
+        if(squares[i]) {
+          image[i] = images[squares[i] + '.png'];
+        }
+      }
+      image = this.checkPossible(owned, totals, image);
+      this.setState({image: image})
+    } catch (e) {
+      this.setState({image: Array(50).fill(images['empty.png'])})
+    }
+
   }
 
   componentWillMount() {
@@ -312,9 +391,48 @@ class Game extends React.Component {
     this.setState({flipped: i});
   }
 
+  increment(i) {
+    const owned = this.state.owned.slice();
+    const checkMneme = this.state.checkMneme.slice();
+    const totals = this.state.totals;
+    var image = this.state.image.slice();
+
+    owned[i] += 1;
+    if(totals[data[i].name] - owned[i] <= 0){
+      checkMneme[i] = null;
+    }
+    image = this.checkPossible(owned, totals, image);
+    this.setState({
+      owned: owned,
+      checkMneme: checkMneme,
+      image: image});
+
+  }
+
+  decrement(i) {
+    const owned = this.state.owned.slice();
+    const checkMneme = this.state.checkMneme.slice();
+    const totals = this.state.totals;
+    var image = this.state.image.slice();
+    owned[i] -= 1;
+    if(this.state.totals[data[i].name] - owned[i] > 0){
+      checkMneme[i] = 1;
+    }
+    if(owned[i] < 0) {
+      owned[i] = 0;
+    }
+    image = this.checkPossible(owned, totals, image);
+    this.setState({
+      owned: owned,
+      checkMneme: checkMneme,
+      image: image});
+  }
+
   handleClick(i) {
     const squares = this.state.squares.slice();
     const image = this.state.image.slice();
+    const total = this.state.totals;
+    const amount = this.state.owned.slice();
     const checkMneme = this.state.checkMneme.slice();
     const checkLogo = this.state.checkLogo.slice();
     let con = null;
@@ -329,6 +447,8 @@ class Game extends React.Component {
     if(squares[i]) {
       squares[i] = null;
       image[i] = images["empty.png"];
+      let imagex = this.checkPossible(amount, total, image);
+      image[i] = imagex[i];
     } else{
       squares[i] = combos[i].name;
       image[i] = images[combos[i].name + ".png"];
@@ -498,145 +618,85 @@ class Game extends React.Component {
       }
     }
 
-    if(isMobile) {
-      return (
-        <div className="container-fluid">
-          <div className="row" id="header-content" style={ {backgroundImage: "url(" + images['banner.png'] + ")"}}>
-            <div >
-              <img src={require('./img/logo.png')} className={"img-fluid"} alt=""/>
-            </div>
+    return (
+      <>
+      <div className="row">
+        <div>
+          <img src={require('./img/banner1.png')} className={"img-fluid"} alt="" style={{marginBottom:"25px"}}/>
+        </div>
+      </div>
+        <div className="row">
+          <div className="col-md-2">
+          <Logogram
+            logograms={this.state.logograms}
+            checkLogo={this.state.checkLogo}
+          />
+          <br/>
+          <p>Enter how many of each you have to the right using the +/- buttons. The number to the right of each name shows how many remaining.</p>
+          <p><img src = {images['empty.png']} alt=""/> = You can't obtain this yet.</p>
+          <p><img src = {images['empty-inverse.png']} alt=""/> = You can obtain this using some combination.</p>
           </div>
-          <div className="row">
-              <div className="col-2">
-              <Logogram
-                logograms={this.state.logograms}
-                checkLogo={this.state.checkLogo}
-              />
-              </div>
-              <div className="col-2">
-              <Mnemes
-                mnemes={this.state.mnemes}
-                checkMneme={this.state.checkMneme}
-                totals={this.state.totals}
-              />
-              </div>
-            <div className="game-board col-8">
-              <div className="row">
-                <div className="col-12">
-                  <div className="table">
-                    <h2>Logos Action Log</h2>
-                    <h4>ACTIONS</h4>
-                    <Board
-                      squares={this.state.squares}
-                      image={this.state.image}
-                      onClick={(i) => this.handleClick(i)}
-                      onMouseOut={(i) => this.onMouseOut(i)}
-                      onMouseOver={(i) => this.onMouseOver(i)}
-                    />
+          <div className="col-md-3">
+          <Mnemes
+            mnemes={this.state.mnemes}
+            checkMneme={this.state.checkMneme}
+            totals={this.state.totals}
+            owned={this.state.owned}
+            increment={(i) => this.increment(i)}
+            decrement={(i) => this.decrement(i)}
+          />
+          </div>
+          <div className="col-md-6">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="row">
+                  <div className="col-md-12">
+                    <div className="tabletitle">
+                      <h2>Logos Action Log</h2>
+                      <h4>ACTIONS</h4>
+                      <Board
+                        squares={this.state.squares}
+                        image={this.state.image}
+                        onClick={(i) => this.handleClick(i)}
+                        onMouseOut={(i) => this.onMouseOut(i)}
+                        onMouseOver={(i) => this.onMouseOver(i)}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="row">
+                <div className="row">
                 <div className="col-12">
                   <h3>Collected</h3>
                   <ul className="list-inline">
                     {numbers1}
                   </ul>
                 </div>
-              </div>
-              <div className="row">
+                </div>
+                <div className="row">
                 <div className="col-12">
                   <ul className="list-inline">
                     {numbers2}
                   </ul>
                 </div>
-              </div>
-              <div className="row">
+                </div>
+                <div className="row">
                 <div className="col-12">
                   <ul className="list-inline">
                     {numbers3}
                   </ul>
                 </div>
-              </div>
-
-                  {label(this.state.flipped)}
-
-              </div>
-          </div>
-        </div>
-      );
-    } else {
-    return (
-
-      <div className="container-fluid">
-        <div className="row" id="header-content" style={ {backgroundImage: "url(" + images['banner.png'] + ")"}}>
-          <div >
-            <img src={require('./img/logo.png')} className={"img-fluid"} alt=""/>
-          </div>
-        </div>
-        <div className="row">
-            <div className="col-2">
-            <Logogram
-              logograms={this.state.logograms}
-              checkLogo={this.state.checkLogo}
-            />
-            </div>
-            <div className="col-2">
-            <Mnemes
-              mnemes={this.state.mnemes}
-              checkMneme={this.state.checkMneme}
-              totals={this.state.totals}
-            />
-            </div>
-          <div className="game-board col-8">
-            <div className="row">
-              <div className="col-12">
-                <div className="tabletitle">
-                  <h2>Logos Action Log</h2>
-                  <h4>ACTIONS</h4>
-                  <Board
-                    squares={this.state.squares}
-                    image={this.state.image}
-                    onClick={(i) => this.handleClick(i)}
-                    onMouseOut={(i) => this.onMouseOut(i)}
-                    onMouseOver={(i) => this.onMouseOver(i)}
-                  />
                 </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <h3>Collected</h3>
-                <ul className="list-inline">
-                  {numbers1}
-                </ul>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <ul className="list-inline">
-                  {numbers2}
-                </ul>
-              </div>
-            </div>
-            <div className="row">
-              <div className="col-12">
-                <ul className="list-inline">
-                  {numbers3}
-                </ul>
-              </div>
-            </div>
-
                 {label(this.state.flipped)}
-
+              </div>
             </div>
+          </div>
         </div>
-      </div>
+        </>
     );
 
 
 
-}
+
   }
 }
 

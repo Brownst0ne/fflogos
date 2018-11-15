@@ -2,6 +2,15 @@ body {
   margin: 20px;
   font-family: 'Roboto', sans-serif;
   background-color: #313131;
+
+}
+
+p {
+  color: white;
+}
+
+p.title{
+  color: black
 }
 
 ol, ul {
@@ -52,6 +61,7 @@ p.desc {
 
 .info-box {
   background: #4A494A;
+  margin-top: 15px;
 }
 
 .table-sm {
@@ -62,14 +72,9 @@ p.desc {
 }
 
 .tabletitle {
-  width:540px;
-  background: #4A494A;
-  padding: 10px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 60px;
-  border-radius: 2%;
-  box-shadow:0px 0px 3px 3px #94865A;
+  margin-top: 15px;
+  margin-bottom: 15px;
+
 }
 
 .dotoff {
@@ -125,6 +130,13 @@ p.desc {
 }
 
 .mneme-table {
+  table-layout: auto;
+  border-radius: 20%;
+  background: white;
+}
+
+.logos-table {
+  table-layout: auto;
   border-radius: 20%;
   background: white;
 }
@@ -180,41 +192,49 @@ p.desc {
 .Conceptual-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #490E35;
+  display: block;
 }
 
 .Fundamental-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #AD4500;
+  display: block;
 }
 
 .Offensive-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #932117;
+  display: block;
 }
 
 .Protective-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #1351B5;
+  display: block;
 }
 
 .Curative-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #003A00;
+  display: block;
 }
 
 .Tactical-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #6E3100;
+  display: block;
 }
 
 .Inimical-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #78369D;
+  display: block;
 }
 
 .Mitigative-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #013145;
+  display: block;
 }
 
 
@@ -227,10 +247,7 @@ p.desc {
 
 }
 
-table {
-  border-collapse: collapse;
-  border-radius: 1%;
-}
+
 
 .square {
   background: #4A494A;
