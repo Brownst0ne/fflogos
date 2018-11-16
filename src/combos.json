@@ -94,10 +94,16 @@
   {
     "id": 5,
     "name": "Wisdom of the Skirmisher",
-    "amount": 1,
-    "mneme1": ["Wisdom of the Martialist"],
-    "mneme2": ["Wisdom of the Martialist"],
-    "mneme3": ["Wisdom of the Martialist"],
+    "amount": 2,
+    "mneme1": [
+              "Wisdom of the Skirmisher",
+              "Wisdom of the Martialist"],
+    "mneme2": [
+              "",
+              "Wisdom of the Martialist"],
+    "mneme3": [
+              "",
+              "Wisdom of the Martialist"],
     "description": "Increases damage dealt by 12%. Cannot be used with other Wisdom abilities. Effect ends upon reuse or upon replacement of duty action.",
     "use": 3,
     "type": "Spell",
@@ -358,15 +364,18 @@
     "name": "Dispel L",
     "amount": 2,
     "mneme1":
-    ["Tranquilizer L",
+    [ "Dispel L",
+      "Tranquilizer L",
       "Esuna L"
     ],
     "mneme2":
-    ["Tranquilizer L",
+    [ "",
+      "Tranquilizer L",
       "Esuna L"
     ],
     "mneme3":
-    ["Tranquilizer L",
+    [ "",
+      "Tranquilizer L",
       "Esuna L"
     ],
     "description": "Removes one beneficial status from target.",

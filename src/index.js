@@ -52,7 +52,7 @@ function Mneme(props) {
         <div className="input-group-prepend">
           <button className="btn btn-dark btn-sm" onClick={props.decrement}><i className="fa fa-minus"></i></button>
         </div>
-        <input type="text" className="form-control form-control-sm" value={props.owned}  min="0" readonly="readonly"/>
+        <input type="text" className="form-control form-control-sm" value={props.owned}  min="0" readOnly="readonly"/>
         <div className="input-group-prepend">
           <button className="btn btn-dark btn-sm" onClick={props.increment}><i className="fa fa-plus"></i></button>
         </div>
@@ -291,13 +291,14 @@ class Game extends React.Component {
           amounts.set(combos[i].mneme2[j], amounts.get(combos[i].mneme2[j])-1);
           cnt++;
         }
-        if(amounts.get(combos[i].mneme2[j]) || combos[i].mneme3[j] === "") {
+        if(amounts.get(combos[i].mneme3[j]) || combos[i].mneme3[j] === "") {
           cnt++;
         }
         if(cnt === 3){
           if(image[i] === images['empty.png']) {
             image[i] = images['empty-inverse.png'];
           }
+          break;
         } else {
           if(image[i] === images['empty-inverse.png']) {
             image[i] = images['empty.png'];
@@ -432,7 +433,7 @@ class Game extends React.Component {
     const squares = this.state.squares.slice();
     const image = this.state.image.slice();
     const total = this.state.totals;
-    const amount = this.state.owned.slice();
+    const owned = this.state.owned.slice();
     const checkMneme = this.state.checkMneme.slice();
     const checkLogo = this.state.checkLogo.slice();
     let con = null;
@@ -447,7 +448,7 @@ class Game extends React.Component {
     if(squares[i]) {
       squares[i] = null;
       image[i] = images["empty.png"];
-      let imagex = this.checkPossible(amount, total, image);
+      let imagex = this.checkPossible(owned, total, image);
       image[i] = imagex[i];
     } else{
       squares[i] = combos[i].name;
