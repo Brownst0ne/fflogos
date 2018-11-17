@@ -396,17 +396,20 @@ class Game extends React.Component {
     const owned = this.state.owned.slice();
     const checkMneme = this.state.checkMneme.slice();
     const totals = this.state.totals;
+    const squares = this.state.squares.slice();
     var image = this.state.image.slice();
 
     owned[i] += 1;
     if(totals[data[i].name] - owned[i] <= 0){
       checkMneme[i] = null;
     }
+    var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
     image = this.checkPossible(owned, totals, image);
     this.setState({
       owned: owned,
-      checkMneme: checkMneme,
-      image: image});
+      checkMneme: mneme,
+      image: image,
+      checkLogo: checkLogo});
 
   }
 
@@ -414,6 +417,7 @@ class Game extends React.Component {
     const owned = this.state.owned.slice();
     const checkMneme = this.state.checkMneme.slice();
     const totals = this.state.totals;
+    const squares = this.state.squares.slice();
     var image = this.state.image.slice();
     owned[i] -= 1;
     if(this.state.totals[data[i].name] - owned[i] > 0){
@@ -422,143 +426,40 @@ class Game extends React.Component {
     if(owned[i] < 0) {
       owned[i] = 0;
     }
+    var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
+
     image = this.checkPossible(owned, totals, image);
     this.setState({
       owned: owned,
-      checkMneme: checkMneme,
-      image: image});
+      checkMneme: mneme,
+      image: image,
+      checkLogo: checkLogo});
   }
 
   handleClick(i) {
     const squares = this.state.squares.slice();
     const image = this.state.image.slice();
-    const total = this.state.totals;
     const owned = this.state.owned.slice();
     const checkMneme = this.state.checkMneme.slice();
-    const checkLogo = this.state.checkLogo.slice();
-    let con = null;
-    let fun = null;
-    let off = null;
-    let pro = null;
-    let cur = null;
-    let tac = null;
-    let ini = null;
-    let mit = null;
 
     if(squares[i]) {
       squares[i] = null;
       image[i] = images["empty.png"];
-      let imagex = this.checkPossible(owned, total, image);
-      image[i] = imagex[i];
     } else{
       squares[i] = combos[i].name;
       image[i] = images[combos[i].name + ".png"];
     }
 
-    var left = calculateRemaining(squares);
     var totals = calculcateTotal(squares);
-
-    labeled:
-    for(let j = 0; j < 24; j++){
-      for(let k = 0; k < left.length; k++){
-        if(this.state.mnemes[j] === left[k]){
-          checkMneme[j] = 1;
-          switch(calculcateLogos(left[k])) {
-            case "Conceptual":
-              con = 7;
-              break;
-            case "Fundamental":
-              fun = 5;
-              break;
-            case "Offensive":
-              off = 2;
-              break;
-            case "Protective":
-              pro = 2;
-              break;
-            case "Curative":
-              cur = 2;
-              break;
-            case "Tactical":
-              tac = 2;
-              break;
-            case "Inimical":
-              ini = 2;
-              break;
-            case "Mitigative":
-              mit = 2;
-              break;
-            default:
-
-          }
-          continue labeled;
-        }
-      }
-      checkMneme[j] = null;
-    }
-
-    for(let j = 0;j < 7; j++){
-      if(con) {
-        checkLogo[j] = 1;
-      } else {
-        checkLogo[j] = null;
-      }
-    }
-    for(let j = 7;j < 12; j++){
-      if(fun) {
-        checkLogo[j] = 1;
-      } else {
-        checkLogo[j] = null;
-      }
-    }
-    for(let j = 12;j < 14; j++){
-      if(off) {
-        checkLogo[j] = 1;
-      } else {
-        checkLogo[j] = null;
-      }
-    }
-    for(let j = 14;j < 16; j++){
-      if(pro) {
-        checkLogo[j] = 1;
-      } else {
-        checkLogo[j] = null;
-      }
-    }
-    for(let j = 16;j < 18; j++){
-      if(cur) {
-        checkLogo[j] = 1;
-      } else {
-        checkLogo[j] = null;
-      }
-    }
-    for(let j = 18;j < 20; j++){
-      if(tac) {
-        checkLogo[j] = 1;
-      } else {
-        checkLogo[j] = null;
-      }
-    }
-    for(let j = 20;j < 22; j++){
-      if(ini) {
-        checkLogo[j] = 1;
-      } else {
-        checkLogo[j] = null;
-      }
-    }
-    for(let j = 22;j < 24; j++){
-      if(mit) {
-        checkLogo[j] = 1;
-      } else {
-        checkLogo[j] = null;
-      }
-    }
+    var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
+    console.log(mneme);
+    image[i] = this.checkPossible(owned, totals, image)[i];
 
     this.setState({
       squares: squares,
       image: image,
       count: squares.filter(Boolean).length,
-      checkMneme: checkMneme,
+      checkMneme: mneme,
       checkLogo: checkLogo,
       totals: totals,
     });
@@ -747,6 +648,80 @@ function calculcateLogos(l) {
     }
   }
   return ret;
+}
+
+function calculateMnemes(squares, checkMneme, owned) {
+  var left = calculateRemaining(squares);
+  var totals = calculcateTotal(squares);
+  var total = [];
+  for(let i = 0; i < 24; i++) {
+    if(totals[data[i].name] - owned[i] > 0) {
+      checkMneme[i] = 1;
+    } else {
+      checkMneme[i] = 0;
+    }
+  }
+
+  var checkLogo = Array(50).fill(0);
+  for(let i = 0; i < 7; i++) {
+    if(checkMneme[i]) {
+      checkLogo[0] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+  for(let i = 7; i < 12; i++) {
+    if(checkMneme[i]) {
+      checkLogo[7] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+  for(let i = 12; i < 14; i++) {
+    if(checkMneme[i]) {
+      checkLogo[12] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+  for(let i = 14; i < 16; i++) {
+    if(checkMneme[i]) {
+      checkLogo[14] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+  for(let i = 16; i < 18; i++) {
+    if(checkMneme[i]) {
+      checkLogo[16] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+  for(let i = 18; i < 20; i++) {
+    if(checkMneme[i]) {
+      checkLogo[18] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+  for(let i = 20; i < 22; i++) {
+    if(checkMneme[i]) {
+      checkLogo[20] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+  for(let i = 22; i < 24; i++) {
+    if(checkMneme[i]) {
+      checkLogo[22] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+
+
+  return [checkLogo, checkMneme];
 }
 
 function counts(arr) {
