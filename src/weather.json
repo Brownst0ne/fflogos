@@ -1,0 +1,21 @@
+{
+  "pyros":
+  [
+    {"weather": 0,"chance": 10},
+    {"weather": 1,"chance": 28},
+    {"weather": 2,"chance": 46},
+    {"weather": 3,"chance": 64},
+    {"weather": 4,"chance": 82},
+    {"weather": 5,"chance": 100}
+  ],
+
+  "index":
+  [
+    "Fair Skies",
+    "Heat Waves",
+    "Thunder",
+    "Blizzards",
+    "Umbral Wind",
+    "Snow"
+  ]
+}

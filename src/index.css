@@ -74,8 +74,43 @@ p.desc {
 .tabletitle {
   margin-top: 15px;
   margin-bottom: 15px;
-
 }
+
+.tabletitle_m {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  overflow-x: scroll;
+}
+
+.Collapsible {
+  width: 100%;
+}
+
+.Collapsible__trigger {
+  display: block;
+  color: #94CEC7;
+  text-shadow: 1px -1px 2px #627C7A;
+  position: relative;
+  border: 1px solid white;
+  padding: 10px;
+  background: #282C34;
+  color: white;
+}
+
+.Collapsible__trigger:after {
+  font-family: 'FontAwesome';
+  content: '\f107';
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: block;
+  transition: transform 300ms;
+}
+.Collapsible__trigger.is-open:after {
+  transform: rotateZ(180deg); }
+.Collapsible__trigger.is-disabled {
+  opacity: 0.5;
+  background-color: grey; }
 
 .dotoff {
   height: 25px;
@@ -292,4 +327,13 @@ p.desc {
   background: white;
   border-radius: 2%;
   box-shadow:0px 0px 3px 3px #94865A;
+}
+
+.footer {
+  text-align: center;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
 }

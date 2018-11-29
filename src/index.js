@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import data from './data.json';
 import combos from './combos.json';
+import weather from './weather.json';
 import Tooltip from 'react-simple-tooltip';
+import Collapsible from 'react-collapsible';
 const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
 
 function importAll(r) {
@@ -146,6 +148,95 @@ const label = flipped => {
 }
 
 
+class Clock extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {date: clock(new Date())};
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: clock(new Date())
+    });
+  }
+
+  getEorzeaHour(time) {
+      var seconds = parseInt(time / 1000);
+      var bell = (seconds / 175) % 24;
+      return Math.floor(bell);
+  }
+
+  getEorzeaMinute(time) {
+    var seconds = parseInt(time / 1000);
+    var bell = (seconds / (2+(11/12))) % 60;
+    return Math.floor(bell);
+  }
+
+  getWeatherTimes(i) {
+    var num = []
+    var times = [];
+    for(let j = -1; j < i-1; j++) {
+      var chance = new Date();
+
+      var bells = 175 * 8 * 1000;
+      var eorzeaTime = clock(chance);
+
+      var eorzeaHour = this.getEorzeaHour(chance);
+      eorzeaHour =  eorzeaHour - (Math.floor(eorzeaHour / 8) * 8);
+
+      var eorzeaMinute = this.getEorzeaMinute(chance);
+      var subTime = (eorzeaHour*bells / 8) + (eorzeaMinute*(2 +(11/12))*1000)
+      var time = new Date(chance.getTime() - subTime + (j*bells));
+
+      time.setSeconds(time.getSeconds()-(time.getSeconds()%10));
+      times.push(time);
+      chance = calculateForecastTarget(new Date(chance.getTime() + (j*bells)));
+      for(let k = 0; k < weather.pyros.length; k++) {
+        if(chance < weather.pyros[k].chance) {
+          num.push(weather.index[k]);
+          break;
+        }
+      }
+    }
+    return [num, times];
+  }
+
+  renderWeather() {
+    var row = [];
+    var [wthr, times] = this.getWeatherTimes(5);
+    for(let i = 0; i < wthr.length; i++) {
+      row.push(
+        <li>
+          <img src={images[wthr[i] + '.png']} alt="" />
+          {times[i].toLocaleTimeString(navigator.language)}
+        </li>
+      );
+    }
+
+    return <ol>{row}</ol>
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Time: </h1>
+        <p>ET: {this.state.date}</p>
+        {this.renderWeather()}
+      </div>
+    )
+  }
+}
 
 class Logogram extends React.Component {
   renderGram() {
@@ -437,6 +528,7 @@ class Game extends React.Component {
   }
 
   handleClick(i) {
+
     const squares = this.state.squares.slice();
     const image = this.state.image.slice();
     const owned = this.state.owned.slice();
@@ -452,7 +544,6 @@ class Game extends React.Component {
 
     var totals = calculcateTotal(squares);
     var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
-    console.log(mneme);
     image[i] = this.checkPossible(owned, totals, image)[i];
 
     this.setState({
@@ -520,6 +611,86 @@ class Game extends React.Component {
       }
     }
 
+    if (isMobile) {
+      return (
+        <>
+        <div className="row">
+          <div>
+            <img src={require('./img/banner1.png')} className={"img-fluid"} alt="" style={{marginBottom:"25px"}}/>
+          </div>
+        </div>
+        <div className="row">
+        <Collapsible trigger="LOGOS ACTIONS">
+          <div className="Row">
+          <div className="tabletitle_m">
+            <h2>Logos Action Log</h2>
+            <h4>ACTIONS</h4>
+            <Board
+              squares={this.state.squares}
+              image={this.state.image}
+              onClick={(i) => this.handleClick(i)}
+              onMouseOut={(i) => this.onMouseOut(i)}
+              onMouseOver={(i) => this.onMouseOver(i)}
+            />
+            <div className="row">
+            <div className="col-12">
+              <h3>Collected</h3>
+              <ul className="list-inline">
+                {numbers1}
+              </ul>
+            </div>
+            </div>
+            <div className="row">
+            <div className="col-12">
+              <ul className="list-inline">
+                {numbers2}
+              </ul>
+            </div>
+            </div>
+            <div className="row">
+            <div className="col-12">
+              <ul className="list-inline">
+                {numbers3}
+              </ul>
+            </div>
+            </div>
+          </div>
+          </div>
+          </Collapsible>
+        </div>
+        <div className="row">
+          <Collapsible trigger="LOGOS DESCRIPTION">
+            {label(this.state.flipped)}
+          </Collapsible>
+        </div>
+        <div className="row">
+        <Collapsible trigger="MNEMES">
+        <br/>
+        <p>Enter how many of each you have below using the +/- buttons. The number to the right of each name shows how many remaining.</p>
+        <p><img src = {images['empty.png']} alt=""/> = You can't obtain this yet.</p>
+        <p><img src = {images['empty-inverse.png']} alt=""/> = You can obtain this using some combination.</p>
+          <Mnemes
+            mnemes={this.state.mnemes}
+            checkMneme={this.state.checkMneme}
+            totals={this.state.totals}
+            owned={this.state.owned}
+            increment={(i) => this.increment(i)}
+            decrement={(i) => this.decrement(i)}
+          />
+          </Collapsible>
+        </div>
+        <div className="row">
+          <Collapsible trigger="LOGOGRAMS">
+            <Logogram
+              logograms={this.state.logograms}
+              checkLogo={this.state.checkLogo}
+              />
+          </Collapsible>
+        </div>
+        </>
+      );
+    } else {
+
     return (
       <>
       <div className="row">
@@ -529,6 +700,7 @@ class Game extends React.Component {
       </div>
         <div className="row">
           <div className="col-md-2">
+
           <Logogram
             logograms={this.state.logograms}
             checkLogo={this.state.checkLogo}
@@ -563,7 +735,7 @@ class Game extends React.Component {
                         onMouseOut={(i) => this.onMouseOut(i)}
                         onMouseOver={(i) => this.onMouseOver(i)}
                       />
-                    </div>
+                      </div>
                   </div>
                 </div>
                 <div className="row">
@@ -596,7 +768,7 @@ class Game extends React.Component {
         </>
     );
 
-
+}
 
 
   }
@@ -606,6 +778,7 @@ class Game extends React.Component {
 // ========================================
 
 ReactDOM.render(
+
   <Game />,
   document.getElementById('root')
 );
@@ -732,4 +905,36 @@ function counts(arr) {
     c[num] = c[num] ? c[num] + 1 : 1;
   }
   return c;
+}
+
+function calculateForecastTarget(lDate) {
+        // Thanks to Rogueadyn's SaintCoinach library for this calculation.
+
+        var unixSeconds = parseInt(lDate.getTime() / 1000);
+        // Get Eorzea hour for weather start
+        var bell = unixSeconds / 175;
+
+        // Do the magic 'cause for calculations 16:00 is 0, 00:00 is 8 and 08:00 is 16
+        var increment = (bell + 8 - (bell % 8)) % 24;
+
+        // Take Eorzea days since unix epoch
+        var totalDays = unixSeconds / 4200;
+        totalDays = (totalDays << 32) >>> 0; // uint
+
+        // 0x64 = 100
+        var calcBase = totalDays * 100 + increment;
+
+        // 0xB = 11
+        var step1 = ((calcBase << 11) ^ calcBase) >>> 0; // uint
+        var step2 = ((step1 >>> 8) ^ step1) >>> 0; // uint
+
+        // 0x64 = 100
+        return step2 % 100;
+    }
+
+
+function clock(time) {
+  var epoch = (60 * 24) / 70;
+
+  return new Date((time * epoch) - (60*60*1000)).toLocaleTimeString(navigator.language, {hour: '2-digit', minute:'2-digit'});
 }
