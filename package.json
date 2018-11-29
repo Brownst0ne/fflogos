@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "^16.6.1",
+    "react-collapsible": "^2.3.2",
     "react-dom": "^16.6.1",
     "react-scripts": "2.1.1",
+    "react-scrollbar": "^0.5.4",
     "react-simple-tooltip": "^2.3.3"
   },
   "scripts": {
