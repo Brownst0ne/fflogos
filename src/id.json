@@ -664,5 +664,47 @@
     "ÉCLAT LOGOS",
     "UNPROSPECTIERTER LOGOS-SPLITTER",
     "未鑑定ロゴスシャード"
+  ],
+  [
+    "Logos Action Log",
+    "Encyclopédie des actions Logos",
+    "Logos-Kommando-Log",
+    "ロゴスアクションログ"
+  ],
+  [
+    "ACTIONS",
+    "ACTIONS",
+    "KOMMANDOS",
+    "ACTIONS"
+  ],
+  [
+    "COLLECTED",
+    "OBTENUES",
+    "GESAMMELT",
+    "COLLECTED"
+  ],
+  [
+    "You can't obtain this yet.",
+    "Vous ne pouvez pas l'obtenir pour le moment.",
+    "Das kannst du noch nicht bekommen.",
+    "あなたはまだこれを得ることができません。"
+  ],
+  [
+    "You can obtain this using some combination.",
+    "Vous pouvez l'obtenir en utilisant une combinaison.",
+    "Sie können dies durch eine Kombination erhalten.",
+    "いくつかの組み合わせを使ってこれを得ることができます。"
+  ],
+  [
+    "Enter how many of each you have below using the +/- buttons. The number to the right of each name shows how many remaining.",
+    "Entrez le nombre de chaque élément ci-dessous à l’aide des touches +/-. Le nombre à droite de chaque nom indique le nombre restant.",
+    "Geben Sie unten mit den Tasten +/- ein, wie viele Sie jeweils haben. Die Zahl rechts neben jedem Namen gibt an, wie viele übrig sind.",
+    "+/-ボタンを使用して、以下にどれくらいの数を入力しますか。各名前の右側にある数字は、残りの数を示します。"
+  ],
+  [
+    "",
+    "",
+    "",
+    ""
   ]
 ]

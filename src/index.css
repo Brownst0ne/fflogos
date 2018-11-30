@@ -59,17 +59,24 @@ p.desc {
   left: 0;
   right: 0;
   bottom: 0;
-
+  z-index: 1;
   background-color: rgba(0,0,0, 0.5);
 }
 .popup_inner {
   position: absolute;
 
   top: 25%;
-  bottom: 25%;
+
   margin: auto;
 }
 
+.row {
+  margin-top: 5px;
+}
+
+.lng {
+  font-size: 12px;
+}
 #header-content {
 
 	-webkit-background-size: 100% auto;
@@ -196,100 +203,101 @@ p.desc {
   background: white;
 }
 
+
 .Conceptual-on {
   background:#A52175;
   box-shadow:0px 0px 2px 2px #490E35;
-  display: block;
+  width:12%;
 }
 
 .Fundamental-on {
   background:#FF6A00;
   box-shadow:0px 0px 2px 2px #AD4500;
-  display: block;
+width:12%;
 }
 
 .Offensive-on {
   background:#D02519;
   box-shadow:0px 0px 2px 2px #932117;
-  display: block;
+width:12%;
 }
 
 .Protective-on {
   background:#0C42C2;
   box-shadow:0px 0px 2px 2px #1351B5;
-  display: block;
+width:12%;
 }
 
 .Curative-on {
   background:#0EBC00;
   box-shadow:0px 0px 2px 2px #003A00;
-  display: block;
+width:12%;
 }
 
 .Tactical-on {
   background:#DDB90E;
   box-shadow:0px 0px 2px 2px #6E3100;
-  display: block;
+width:12%;
 }
 
 .Inimical-on {
   background:#8B3EAF;
   box-shadow:0px 0px 2px 2px #78369D;
-  display: block;
+width:12%;
 }
 
 .Mitigative-on {
   background:#1E9EB0;
   box-shadow:0px 0px 2px 2px #013145;
-  display: block;
+width:12%;
 }
 
 .Conceptual-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #490E35;
-  display: block;
+
 }
 
 .Fundamental-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #AD4500;
-  display: block;
+
 }
 
 .Offensive-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #932117;
-  display: block;
+
 }
 
 .Protective-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #1351B5;
-  display: block;
+
 }
 
 .Curative-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #003A00;
-  display: block;
+
 }
 
 .Tactical-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #6E3100;
-  display: block;
+
 }
 
 .Inimical-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #78369D;
-  display: block;
+
 }
 
 .Mitigative-off {
   background:#4C4D4C;
   box-shadow:0px 0px 2px 2px #013145;
-  display: block;
+
 }
 
 
@@ -350,10 +358,59 @@ p.desc {
 }
 
 .footer {
+  position:relative;
   text-align: center;
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: white;
+  background-color: black;
   color: black;
+  z-index: -1;
+}
+
+.spinner {
+
+  float: right;
+}
+
+.spinner input {
+  text-align: right;
+  height: 34px;
+}
+
+.input-group-btn-vertical {
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  display: table-cell;
+}
+
+.input-group-btn-vertical > .btn {
+  display: block;
+  float: none;
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  margin-left: -1px;
+  position: relative;
+  border-radius: 0;
+}
+
+.input-group-btn-vertical > .btn:first-child {
+  border-top-right-radius: 4px;
+}
+
+.input-group-btn-vertical > .btn:last-child {
+  margin-top: -2px;
+  border-bottom-right-radius: 4px;
+}
+
+.input-group-btn-vertical i {
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+
+span {
+  font-size: 14px;
 }

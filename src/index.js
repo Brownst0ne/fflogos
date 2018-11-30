@@ -29,7 +29,7 @@ function Square(props) {
 
 function Language(props) {
   return (
-    <button type="button" class="btn btn-secondary" onClick={props.onClick}>{props.value}</button>
+    <button type="button" class="btn btn-secondary lng" onClick={props.onClick}>{props.value}</button>
   )
 }
 
@@ -37,11 +37,11 @@ function Mneme(props) {
   let v = props.check ? "-on" : "-off";
   return (
     <>
-    <tr style={{width: "100%"}} className={id[data[props.value].logogram][0] + v}>
+    <tr className={id[data[props.value].logogram][0] + v}>
 
-        <td style={{width: "100%"}}>
+        <td style={{width:"75%"}}>
         <Tooltip
-          placement="right" style={{width: "100%"}}
+          placement="right"
           content={
             <div>
               <p style={{width:"200px"}}>{id[data[props.value].logogram][lang]}</p>
@@ -50,21 +50,27 @@ function Mneme(props) {
             </div>
           }
         >
-          <img src= {images[data[props.value].type + "_mneme.png"]} alt=""/>
-          {id[data[props.value].name][lang]}
+
+
+              <img src= {images[data[props.value].type + "_mneme.png"]} alt=""/>
+
+
+
+                <span>{id[data[props.value].name][lang]}</span>
+
+
           </Tooltip>
         </td>
-        <td >{props.totals}</td>
-    </tr>
-    <tr>
-      <td>
-      <div className="input-group mb-3">
-        <div className="input-group-prepend">
-          <button className="btn btn-dark btn-sm" onClick={props.decrement}><i className="fa fa-minus"></i></button>
-        </div>
+        <td style={{width:"7%"}}>{props.totals}</td>
+
+
+      <td style={{width:"18%"}}>
+      <div className="input-group mb-3 spinner">
+
         <input type="text" className="form-control form-control-sm" value={props.owned}  min="0" readOnly="readonly"/>
-        <div className="input-group-prepend">
-          <button className="btn btn-dark btn-sm" onClick={props.increment}><i className="fa fa-plus"></i></button>
+        <div className="input-group-btn-vertical">
+          <button class="btn btn-default" onClick={props.increment} type="button"><i class="fa fa-caret-up"></i></button>
+          <button class="btn btn-default" onClick={props.decrement} type="button"><i class="fa fa-caret-down"></i></button>
         </div>
       </div>
       </td>
@@ -325,13 +331,15 @@ class Mnemes extends React.Component {
   renderMneme() {
     let row = [];
     for(let j = 0; j < 24; j++){
-      row.push(<Mneme value={j}
-                  totals={this.props.totals[id[data[j].name][0]]}
-                  owned={this.props.owned[j]}
-                  increment={() => this.props.increment(j)}
-                  decrement={() => this.props.decrement(j)}
-                  check={this.props.checkMneme[j]}
-                  key={j}/>);
+      if((this.props.mod === 3) || (j%2 === this.props.mod)) {
+        row.push(<Mneme value={j}
+                    totals={this.props.totals[id[data[j].name][0]]}
+                    owned={this.props.owned[j]}
+                    increment={() => this.props.increment(j)}
+                    decrement={() => this.props.decrement(j)}
+                    check={this.props.checkMneme[j]}
+                    key={j}/>);
+      }
     }
     return <table className="menme-table"><tbody>{row}</tbody></table>;
   }
@@ -721,7 +729,7 @@ class Game extends React.Component {
             <img src={require('./img/banner1.png')} className={"img-fluid"} alt="" style={{marginBottom:"25px"}}/>
           </div>
         </div>
-        <div className="row">
+        <div className="row btn-group">
             <Languages
               lang={(i) => this.lang(i)}
             />
@@ -731,8 +739,8 @@ class Game extends React.Component {
         <Collapsible trigger={id[109][lang]}>
           <div className="Row">
           <div className="tabletitle_m">
-            <h2>Logos Action Log</h2>
-            <h4>ACTIONS</h4>
+            <h2>{id[111][lang]}</h2>
+            <h4>{id[112][lang]}</h4>
             <Board
               squares={this.state.squares}
               image={this.state.image}
@@ -742,7 +750,7 @@ class Game extends React.Component {
             />
             <div className="row">
             <div className="col-12">
-              <h3>Collected</h3>
+              <h3>{id[113][lang]}</h3>
               <ul className="list-inline">
                 {numbers1}
               </ul>
@@ -769,11 +777,11 @@ class Game extends React.Component {
         <div className="row">
         <Collapsible trigger="MNEMES">
         <br/>
-        <p>Enter how many of each you have below using the +/- buttons. The number to the right of each name shows how many remaining.</p>
-        <p><img src = {images['empty.png']} alt=""/> = You can't obtain this yet.</p>
-        <p><img src = {images['empty-inverse.png']} alt=""/> = You can obtain this using some combination.</p>
+        <p>{id[116][lang]}</p>
+        <p><img src = {images['empty.png']} alt=""/> = {id[114][lang]}</p>
+        <p><img src = {images['empty-inverse.png']} alt=""/> = {id[115][lang]}</p>
           <Mnemes
-
+            mod={3}
             checkMneme={this.state.checkMneme}
             totals={this.state.totals}
             owned={this.state.owned}
@@ -805,32 +813,53 @@ class Game extends React.Component {
     return (
       <>
       <div className="row">
-        <div className="col-md-8">
+        <div className="col-md-6">
           <img src={require('./img/banner1.png')} className={"img-fluid"} alt="" style={{marginBottom:"25px"}}/>
         </div>
-        <div className="col-md-4">
-          <Languages
-            lang={(i) => this.lang(i)}
-          />
+        <div className="col-md-6">
+          <div className="row">
+            <div className="col-md-5">
+            <div className="btn-group">
+              <Languages
+                lang={(i) => this.lang(i)}
+              />
+            </div>
+            </div>
 
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <p><img src = {images['empty.png']} alt=""/> = {id[114][lang]}</p>
+            </div>
+            <div className="col-md-6">
+              <p><img src = {images['empty-inverse.png']} alt=""/> = {id[115][lang]}</p>
+            </div>
+          </div>
         </div>
       </div>
-      <br/>
         <div className="row">
-          <div className="col-md-2">
+          <div className="col-md-6">
+          <div className="row">
+          <div className="col-md-12">
 
-          <Logogram
 
-            checkLogo={this.state.checkLogo}
-          />
-          <br/>
-          <p>Enter how many of each you have to the right using the +/- buttons. The number to the right of each name shows how many remaining.</p>
-          <p><img src = {images['empty.png']} alt=""/> = You can't obtain this yet.</p>
-          <p><img src = {images['empty-inverse.png']} alt=""/> = You can obtain this using some combination.</p>
+          <p>{id[116][lang]}</p>
+
           </div>
-          <div className="col-md-3">
+          <div className="col-md-6">
           <Mnemes
+            mod={0}
+            checkMneme={this.state.checkMneme}
+            totals={this.state.totals}
+            owned={this.state.owned}
+            increment={(i) => this.increment(i)}
+            decrement={(i) => this.decrement(i)}
+          />
 
+          </div>
+          <div className="col-md-6">
+          <Mnemes
+            mod={1}
             checkMneme={this.state.checkMneme}
             totals={this.state.totals}
             owned={this.state.owned}
@@ -838,14 +867,30 @@ class Game extends React.Component {
             decrement={(i) => this.decrement(i)}
           />
           </div>
+
+          </div>
+          <div class="row">
+          <div className="col-md-12">
+            <h2>{id[110][lang]}</h2>
+          </div>
+          <div className="col-md-12">
+          <Logogram
+
+            checkLogo={this.state.checkLogo}
+          />
+          </div>
+          </div>
+
+          </div>
+
           <div className="col-md-6">
             <div className="row">
               <div className="col-md-12">
                 <div className="row">
                   <div className="col-md-12">
                     <div className="tabletitle">
-                      <h2>Logos Action Log</h2>
-                      <h4>ACTIONS</h4>
+                      <h2>{id[111][lang]}</h2>
+                      <h4>{id[112][lang]}</h4>
                       <Board
                         squares={this.state.squares}
                         image={this.state.image}
@@ -858,7 +903,7 @@ class Game extends React.Component {
                 </div>
                 <div className="row">
                 <div className="col-12">
-                  <h3>Collected</h3>
+                  <h3>{id[113][lang]}</h3>
                   <ul className="list-inline">
                     {numbers1}
                   </ul>
