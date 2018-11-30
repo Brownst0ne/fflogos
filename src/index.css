@@ -52,6 +52,7 @@ p.desc {
 
 .popup {
   position: fixed;
+  overflow-y: scroll;
   width: 100%;
   height: 100%;
   top: 0;
