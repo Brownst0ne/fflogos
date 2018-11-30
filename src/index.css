@@ -10,7 +10,8 @@ p {
 }
 
 p.title{
-  color: black
+  color: black;
+  white-space: pre-line;
 }
 
 ol, ul {
@@ -49,7 +50,24 @@ p.desc {
   color: white;
 }
 
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 
+  background-color: rgba(0,0,0, 0.5);
+}
+.popup_inner {
+  position: absolute;
+
+  top: 25%;
+  bottom: 25%;
+  margin: auto;
+}
 
 #header-content {
 
@@ -60,7 +78,7 @@ p.desc {
 }
 
 .info-box {
-  background: #4A494A;
+  background: #282C34;
   margin-top: 15px;
 }
 
@@ -164,7 +182,8 @@ p.desc {
 
 }
 
-.mneme-table {
+.tbody {
+  width:100%;
   table-layout: auto;
   border-radius: 20%;
   background: white;

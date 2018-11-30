@@ -1,0 +1,668 @@
+[
+  [
+    "Wisdom of the Aetherweaver",
+    "Mémoire d'un prêtre guerrier",
+    "Vermächtnis des Zauberers",
+    "術士の記憶"
+  ],
+  [
+    "Wisdom of the Martialist",
+    "Mémoire d'un protecteur intrépide",
+    "Vermächtnis des Kämpfers",
+    "闘士の記憶"
+  ],
+  [
+    "Wisdom of the Platebearer",
+    "Mémoire d'un soldat cuirassé",
+    "Vermächtnis des Ritters",
+    "重騎兵の記憶"
+  ],
+  [
+    "Incense L",
+    "Évocation Logos: Incitation",
+    "Logos-Splitter des Hohns",
+    "ロゴス・エンミティ"
+  ],
+  [
+    "Cure L",
+    "Évocation Logos: Soin",
+    "Logos-Splitter des Vita",
+    "ロゴス・ケアル"
+  ],
+  [
+    "Backstep L",
+    "Évocation Logos: Bond arrière",
+    "Logos-Splitter der Entrinnung",
+    "ロゴス・スウェー"
+  ],
+  [
+    "Paralyze L",
+    "Évocation Logos: Paralysie",
+    "Logos-Splitter der Paralyse",
+    "ロゴス・パライズ"
+  ],
+  [
+    "Esuna L",
+    "Évocation Logos: Guérison",
+    "Logos-Splitter des Medica",
+    "ロゴス・エスナ"
+  ],
+  [
+    "Raise L",
+    "Évocation Logos: Vie",
+    "Logos-Splitter der Wiederbelebung",
+    "ロゴス・レイズ"
+  ],
+  [
+    "Feint L",
+    "Évocation Logos: Feinte",
+    "Logos-Splitter der Finte",
+    "ロゴス・フェイント"
+  ],
+  [
+    "Tranquilizer L",
+    "Évocation Logos: Tranquillisant",
+    "Logos-Splitter der Betäubung",
+    "ロゴス・トランキライザー"
+  ],
+  [
+    "Protect L",
+    "Évocation Logos: Bouclier",
+    "Logos-Splitter des Protes",
+    "ロゴス・プロテス"
+  ],
+  [
+    "Wisdom of the Skirmisher",
+    "Mémoire d'un combattant",
+    "Vermächtnis des Kampfkünstlers",
+    "武人の記憶"
+  ],
+  [
+    "Bloodbath L",
+    "Évocation Logos: Bain de sang",
+    "Logos-Splitter des Blutbades",
+    "ロゴス・ブラッドバス"
+  ],
+  [
+    "Wisdom of the Guardian",
+    "Mémoire d'un gardien",
+    "Vermächtnis des Wächters",
+    "守護者の記憶"
+  ],
+  [
+    "Wisdom of the Remembered",
+    "Mémoire d'un héros vaillant",
+    "Vermächtnis des Helden",
+    "英傑の記憶"
+  ],
+  [
+    "Wisdom of the Ordained",
+    "Mémoire d'un prêtre",
+    "Vermächtnis des Priesters",
+    "司祭の記憶"
+  ],
+  [
+    "Cure L II",
+    "Évocation Logos: Extra Soin",
+    "Logos-Splitter des Vitra",
+    "ロゴス・ケアルラ"
+  ],
+  [
+    "Featherfoot L",
+    "Évocation Logos: Pieds légers",
+    "Logos-Splitter des Leichtfußes",
+    "ロゴス・フェザーステップ"
+  ],
+  [
+    "Stealth L",
+    "Évocation Logos: Furtivité",
+    "Logos-Splitter der Tarnung",
+    "ロゴス・ステルス"
+  ],
+  [
+    "Spirit Dart L",
+    "Évocation Logos: Flèche spirituelle",
+    "Logos-Splitter des Geistpfeils",
+    "ロゴス・スピリットダート"
+  ],
+  [
+    "Dispel L",
+    "Évocation Logos: Dissipation",
+    "Logos-Splitter des Entzauberns",
+    "ロゴス・ディスペル"
+  ],
+  [
+    "Shell L",
+    "Évocation Logos: Barrière",
+    "Logos-Splitter des Vallum",
+    "ロゴス・シェル"
+  ],
+  [
+    "Stoneskin L",
+    "Évocation Logos: Cuirasse",
+    "Logos-Splitter der Steinhaut",
+    "ロゴス・ストンスキン"
+  ],
+  [
+    "Conceptual",
+    "Éclat Logos d'apprenti non identifié",
+    "Unprospektierter Logos-Splitter der Erneuerung",
+    "未鑑定ロゴスシャード:新鋭"
+  ],
+  [
+    "Fundamental",
+    "Éclat Logos de vétéran non identifié",
+    "Unprospektierter Logos-Splitter des Talents",
+    "未鑑定ロゴスシャード:熟練"
+  ],
+  [
+    "Offensive",
+    "Éclat Logos de maître attaquant non identifié",
+    "Unprospektierter Logos-Splitter des Angreifers",
+    "未鑑定ロゴスシャード:攻勢"
+  ],
+  [
+    "Protective",
+    "Éclat Logos de maître défenseur non identifié",
+    "Unprospektierter Logos-Splitter des Verteidigers",
+    "未鑑定ロゴスシャード:守勢"
+  ],
+  [
+    "Curative",
+    "Éclat Logos de maître soigneur non identifié",
+    "Unprospektierter Logos-Splitter des Heilers",
+    "未鑑定ロゴスシャード:治癒"
+  ],
+  [
+    "Tactical",
+    "Éclat Logos de maître éclaireur non identifié",
+    "Unprospektierter Logos-Splitter des Spähers",
+    "未鑑定ロゴスシャード:斥候"
+  ],
+  [
+    "Inimical",
+    "Éclat Logos de maître sapeur non identifié",
+    "Unprospektierter Logos-Splitter des Störers",
+    "未鑑定ロゴスシャード:妨害"
+  ],
+  [
+    "Mitigative",
+    "Éclat Logos de maître auxiliaire non identifié",
+    "Unprospektierter Logos-Splitter des Unterstützers",
+    "未鑑定ロゴスシャード:支援"
+  ],
+  [
+    "",
+    "",
+    "",
+    ""
+  ],
+  [
+    "Wisdom of the Watcher",
+    "Mémoire d'un éclaireur",
+    "Vermächtnis des Spähers",
+    "斥候の記憶"
+  ],
+  [
+    "Wisdom of the Templar",
+    "Mémoire d'un chevalier sacré",
+    "Vermächtnis des heiligen Ritters",
+    "聖騎士の記憶"
+  ],
+  [
+    "Wisdom of the Irregular",
+    "Mémoire d'un guerrier enragé",
+    "Vermächtnis des Berserkers",
+    "狂戦士の記憶"
+  ],
+  [
+    "Wisdom of the Breathtaker",
+    "Mémoire d'un voleur",
+    "Vermächtnis des Diebes",
+    "盗賊の記憶"
+  ],
+  [
+    "Death L",
+    "Évocation Logos : Mort",
+    "Logos-Tod",
+    "ロゴス・デス"
+  ],
+  [
+    "Focus L",
+    "Évocation Logos : Focalisation",
+    "Logos-Ladung",
+    "ロゴス・チャージ"
+  ],
+  [
+    "Paralyze L III",
+    "Évocation Logos : Méga Paralysie",
+    "Logos-Paralyga",
+    "ロゴス・パライガ"
+  ],
+  [
+    "Swift L",
+    "Évocation Logos : Vélocité",
+    "Logos-Eile",
+    "ロゴス・スウィフト"
+  ],
+  [
+    "Catastrophe L",
+    "Évocation Logos : Catastrophe",
+    "Logos-Magieexplosion",
+    "ロゴス・カタスト"
+  ],
+  [
+    "Aetherial Manipulation L",
+    "Évocation Logos : Bond",
+    "Logos-Äthermanipulation",
+    "ロゴス・ステップ"
+  ],
+  [
+    "Rejuvenate L",
+    "Évocation Logos : Restauration",
+    "Logos-Aufladung",
+    "ロゴス・リチャージ"
+  ],
+  [
+    "Haymaker L",
+    "Évocation Logos : Haymaker",
+    "Logos-Konter",
+    "ロゴス・カウンター"
+  ],
+  [
+    "Rapid Recast L",
+    "Évocation Logos : Recharge rapide",
+    "Logos-Velocitas",
+    "ロゴス・ファストリキャスト"
+  ],
+  [
+    "Cure L III",
+    "Évocation Logos : Méga Soin",
+    "Logos-Vitaga",
+    "ロゴス・ケアルガ"
+  ],
+  [
+    "Regen L",
+    "Évocation Logos : Récup",
+    "Logos-Regena",
+    "ロゴス・リジェネ"
+  ],
+  [
+    "Bravery L",
+    "Évocation Logos : Bravoure",
+    "Logos-Courage",
+    "ロゴス・ブレイブ"
+  ],
+  [
+    "Solid Shield L",
+    "Évocation Logos : Protection physique",
+    "Logos-Schild",
+    "ロゴス・フィジカルシールド"
+  ],
+  [
+    "Spell Shield L",
+    "Évocation Logos : Protection magique",
+    "Logos-Magieschild",
+    "ロゴス・マジックシールド"
+  ],
+  [
+    "Reflect L",
+    "Évocation Logos : Miroir",
+    "Logos-Reflektion",
+    "ロゴス・リフレク"
+  ],
+  [
+    "Smite L",
+    "Évocation Logos : Châtiment",
+    "Logos-Schattenhieb",
+    "ロゴス・スマイト"
+  ],
+  [
+    "Refresh L",
+    "Évocation Logos : Tonification",
+    "Logos-Erfrischung",
+    "ロゴス・リフレッシュ"
+  ],
+  [
+    "Banish L",
+    "Évocation Logos : Bannissement",
+    "Logos-Bann",
+    "ロゴス・バニシュ"
+  ],
+  [
+    "Banish L III",
+    "Évocation Logos : Méga Bannissement",
+    "Logos-Bannga",
+    "ロゴス・バニシュガ"
+  ],
+  [
+    "Magic Burst L",
+    "Évocation Logos : Explosion magique",
+    "Logos-Manaeruption",
+    "ロゴス・マジックバースト"
+  ],
+  [
+    "Double Edge L",
+    "Évocation Logos : Double tranchant",
+    "Logos-Zweischneid",
+    "ロゴス・ダブルエッジ"
+  ],
+  [
+    "Eagle Eye Shot L",
+    "Évocation Logos : Œil d'aigle",
+    "Logos-Adlerauge",
+    "ロゴス・イーグルアイ"
+  ],
+  [
+    "Increases magic damage dealt by 60%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 60% vos dégâts magiques infligés.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Du erhöhst deinen ausgeteilten Magieschaden um 60%\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の与魔法ダメージを60％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases physical damage dealt by 40%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 40% vos dégâts physiques infligés.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Du erhöhst deinen ausgeteilten physischen Schaden um 40%\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の与物理ダメージを40％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases defense by 3,000 and maximum HP by 50%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 3000 votre défense et de 50% vos PV maximums.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Deine Verteidigung ist um 3000 und deine maximalen LP um 50% erhöht.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の防御力を3000上昇させ、かつ最大ＨＰを50％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases defense by 1,800 and maximum HP by 10%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 1800 votre défense et de 10% vos PV maximums.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Deine Verteidigung ist um 1800 und deine maximalen LP um 10% erhöht.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の防御力を1800上昇させ、かつ最大ＨＰを10％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases maximum MP by 50% and healing magic potency by 25%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 50% vos PM maximums et de 25% la puissance de vos sorts curatifs.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Deine maximalen MP sind um 50% und die Wirkung deiner Heilmagie ist um 25% erhöht.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の最大ＭＰを50％上昇させ、かつ回復魔法の回復量を25％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases damage dealt by 12%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 12% vos dégâts infligés.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Du erhöhst deinen ausgeteilten Schaden um 12%\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の与ダメージを12％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases evasion by 25% while reducing damage dealt by 5%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 25% votre esquive et réduit vos dégâts infligés de 5%.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Deine Ausweichrate ist um 25% erhöht, dein ausgeteilter Schaden jedoch um 5% verringert.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の回避率を25％上昇させる代わりに、自身の与ダメージを5％減少させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases healing magic potency by 50% and maximum HP by 30%, while reducing damage dealt by 5%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 50% la puissance de vos sorts curatifs et de 30% vos PV maximums.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Deine maximalen LP sind um 30% und die Wirkung deiner Heilmagie ist um 50% erhöht. Dein ausgeteilter Schaden ist jedoch um 5% verringert.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の回復魔法の回復量を50％上昇させ、かつ最大ＨＰを30％上昇させる代わりに、自身の与ダメージを5％減少させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases damage dealt by 21% while reducing magic defense by 60%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 21% vos dégâts infligés et réduit de 60% votre défense magique.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Du erhöhst deinen ausgeteilten physischen Schaden um 21%, deine Magieabwehr ist jedoch um 60% verringert.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の与ダメージを21％上昇させる代わりに、自身の魔法防御力を60％減少させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases poison resistance and movement speed, including mount speed, and increases evasion by 10%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 10% votre esquive, votre vitesse de déplacement à pied et à dos de monture, ainsi que votre résistance au poison.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Du erhöhst deine Ausweichrate um 10%. Außerdem ist deine Be­we­gungs­ge­schwin­dig­keit auf- und abgesessen erhöht und deine Giftresistenz verstärkt.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の移動速度を上昇させ、かつ回避率を10％上昇させ、かつ毒耐性を上昇させる。\n移動速度上昇効果はマウント中も有効。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases maximum HP by 10% and accuracy by 30%.\nAdditional Effect: Grants a 70% chance of automatic revival upon KO\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 10% vos PV maximums et votre précision de 30%.\nOctroie 70% de chance d'être au­to­ma­ti­que­ment ranimé après avoir perdu con­nais­san­ce.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\n* Ne peut être utilisé en même temps qu'une autre action de type “Mémoire”.",
+    "Deine maximalen LP sind um 10% und deine Präzision um 30% erhöht. Außerdem belebst du dich mit einer Wahr­schein­lich­keit von 70% bei erlittener Kampfunfähigkeit wieder.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の最大ＨＰを10％上昇させ、かつ命中率を30％上昇させる。\n効果中に戦闘不能になると70％の確率で自動的に蘇生する。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases the physical defense of target by 1,000.\nDuration: 30m",
+    "Augmente de 1000 la défense physique de la cible.\nDurée: 30m",
+    "Du erhöhst die Verteidigung des Ziels um 1000.\nDauer: 30 Minuten",
+    "対象の物理防御力を1000上昇させる。　効果時間：30分"
+  ],
+  [
+    "Increases the magic defense of target by 1,000.\nDuration: 30m",
+    "Augmente de 1000 la défense magique de la cible.\nDurée: 30m",
+    "Du erhöhst die Magieabwehr des Ziels um 1000.\nDauer: 30 Minuten",
+    "対象の魔法防御力を1000上昇させる。　効果時間：30分"
+  ],
+  [
+    "KOs target. The less the target's HP, the greater the chance of success.",
+    "Tente d'achever instantanément la cible.\nMoins elle a de PV, plus les chances de succès sont élevées.",
+    "Du machst das Ziel kampfunfähig. Je niedriger die LP des Ziels, desto größer die Erfolgschance.",
+    "対象を戦闘不能にする。\n対象のＨＰが少ないほど成功率が上昇する。"
+  ],
+  [
+    "Grants a stack of Boost, up to a maximum of 16.\nBoost Bonus: Increases potency of next weaponskill by 30% per stack\nDuration: 30s\nShares a recast timer with all weaponskills.",
+    "Augmente de 30% la puissance de votre prochaine technique d'arme. Cumulable jusqu'au 16e degré.\nDurée: 30s\nPartage le même temps de recharge que les techniques d'arme.",
+    "Du versiehst dich mit Starksammeln. Der Effekt kann bis zu 16 Mal gestapelt werden.\nEffekt von Starksammeln: Erhöht den Attacke-Wert der nächsten Waf­fen­fer­tig­keit pro Stapel um 30%\nDauer: 30 Sekunden\nGemeinsamer Reaktivierungs-Timer mit allen anderen Waf­fen­fer­tig­kei­ten.",
+    "自身に「力溜め」を付与する。最大16スタックする。\n力溜め効果：効果中に実行する1回のウェポンスキルの威力を1スタックにつき30％上昇させる。\n効果時間：30秒\nリキャストタイマーをウェポンスキルと共有する。"
+  ],
+  [
+    "Afflicts target with Paralysis.\nDuration: 60s",
+    "Inflige Paralysie à la cible.\nDurée: 60s",
+    "Du fügst dem Ziel Paralyse zu.\nDauer: 60 Sekunden",
+    "対象に麻痺を付与する。　効果時間：60秒"
+  ],
+  [
+    "Afflicts target and all neaby enemies with Paralysis.\nDuration: 60s",
+    "Inflige Paralysie à la cible et aux ennemis autour.\nDurée: 60s",
+    "Du fügst dem Ziel und allen umstehenden Gegnern Paralyse zu.\nDauer: 60 Sekunden",
+    "対象とその周囲の敵に麻痺を付与する。　効果時間：60秒"
+  ],
+  [
+    "Greatly increases movement speed.\nDuration: 10s",
+    "Augmente grandement votre vitesse de déplacement.\nDurée: 10s",
+    "Du erhöhst deine Be­we­gungs­ge­schwin­dig­keit beträchtlich.\nDauer: 10 Sekunden",
+    "自身の移動速度を大幅に上昇させる。　効果時間：10秒"
+  ],
+  [
+    "Increases evasion by 15%.\nDuration: 45s",
+    "Augmente de 15% votre esquive.\nDurée: 45s",
+    "Du erhöhst deine Ausweichrate um 15%.\nDauer: 45 Sekunden",
+    "自身の回避率を15％上昇させる。　効果時間：45秒"
+  ],
+  [
+    "Delivers a ranged attack with a potency of 100.\nAdditional Effect: Afflicts target with Spirit Dart L, increasing damage taken by 8%\nDuration: 60s",
+    "Effectue une attaque physique à distance sur la cible.\nPuissance: 100\nEffet additionnel: inflige Vulnérabilité augmentée.\nDurée: 60s\nVulnérabilité augmentée: augmente les dégâts subis de 8%.",
+    "Du führst eine physische Fernkampfattacke aus.\nAttacke-Wert: 100\nZusatzeffekt: Erhöht den erlittenen Schaden des Ziels um 8%.\nDauer: 60 Sekunden",
+    "対象に遠隔物理攻撃。　威力：100\n追加効果：対象に「被ダメージ上昇」を付与する。\n効果時間：60秒\n被ダメージ上昇効果：対象が受けるダメージを8％上昇させる。"
+  ],
+  [
+    "Deals unaspected damage to all nearby enemies with a potency of 4,000, while dealing damage with a potency of 999,999 to self.",
+    "Inflige des dégâts magiques aux ennemis alentour.\nPuissance: 4000\nVous subissez d'importants dégâts en contrecoup.\nPuissance du contrecoup: 999999",
+    "Du führst eine magische Attacke auf alle umstehenden Gegner aus.\nAttacke-Wert: 4000 bei Gegnern und 999.999 bei Ausführendem.",
+    "自身の周囲の敵に範囲魔法攻撃。　威力：4000\n自身も大ダメージを受ける。　自身への威力：999999"
+  ],
+  [
+    "Removes one beneficial status from target.",
+    "Dissipe un effet bénéfique de la cible.",
+    "Du entfernst einen positiven Status vom Ziel.",
+    "対象にかかっている強化系ステータスを1つ消す。"
+  ],
+  [
+    "Delivers an attack with a potency of 100.\nAdditional Effect: Reduces target's evasion\nDuration: 60s",
+    "Effectue une attaque physique sur la cible.\nPuissance: 100\nEffet additionnel: réduit l'esquive de la cible.\nDurée: 60s",
+    "Du führst eine physische Attacke aus.\nAttacke-Wert: 100\nZusatzeffekt: Verringert die Ausweichrate des Ziels\nDauer: 60 Sekunden",
+    "対象に物理攻撃。　威力：100\n追加効果：対象の回避率を減少させる　効果時間：60秒"
+  ],
+  [
+    "Blend in with your surroundings, making it impossible for most enemies to detect you, but reducing movement speed by 50%. Has no effect on certain enemies with special sight.\nCannot be executed while in combat.\nEffect ends upon use of any action other than Sprint, or upon reuse.",
+    "Réduit de 50% votre vitesse de déplacement et dissimule votre présence à la plupart des ennemis.\nL'effet prend fin en relançant l'action ou lors de l'utilisation d'une autre à part Sprint.\nNe peut être utilisé qu'en étant hors combat.",
+    "Du verbirgst dich vor den Blicken der meisten Gegner, verlangsamst aber deine Be­we­gungs­ge­schwin­dig­keit um 50%.\nEinige Gegner können dich sehen.\nBedingung: nach Ausführung nicht im Kampf.\nEffekt endet bei erneuter Ausführung oder nächstem Kommando mit Ausnahme von Sprint.",
+    "自身の姿を隠し、ほとんどの敵から感知されない状態になる。\nさらに移動速度が50％低下する。\n一部のモンスターからは感知される。\nスプリント以外のアクションを実行するか再使用で解除する。\n効果時間：永続\n発動条件：自身が非戦闘状態"
+  ],
+  [
+    "Rush to a target's side.\nUnable to cast if bound.",
+    "Vous amène en un bond au corps à corps avec votre cible.\nNe peut pas être utilisé sous l'effet Entrave.",
+    "Du bewegst dich augenblicklich vor dein anvisiertes Ziel. \nKann nicht während Fessel ausgeführt werden.",
+    "自身を対象の目前まで素早く移動する。\nバインド中は実行不可。"
+  ],
+  [
+    "Jump 10 yalms back from current position. Cannot be executed while bound.",
+    "Vous fait faire un bond en arrière.\nNe peut pas être utilisé sous l'effet Entrave.",
+    "Du springst 10 Yalme von deiner aktuellen Position zurück.\nKann nicht während Fessel ausgeführt werden.",
+    "自身の10m後方にジャンプする。\nバインド中は実行不可。"
+  ],
+  [
+    "Stuns target.\nDuration: 8s",
+    "Inflige Étourdissement à la cible.\nDurée: 8s",
+    "Du fügst dem Ziel Betäubung zu.\nDauer: 8 Sekunden",
+    "対象をスタンさせる。　効果時間：8秒"
+  ],
+  [
+    "Converts a portion of damage dealt into HP.\nDuration: 45s",
+    "Convertit une partie des dégâts infligés par vos attaques physiques en PV.\nDurée: 45s",
+    "Du wandelst einen Teil deines ausgeteilten Schadens in LP um.\nDauer: 45 Sekunden",
+    "一定時間、自身の攻撃に、与えたダメージの一部をＨＰとして吸収する効果を付与する。\n効果時間：45秒"
+  ],
+  [
+    "Instantly restores 500 TP and 50% of maximum MP.",
+    "Restaure 500 de vos PT et 50% de vos PM maximums.",
+    "Du regenerierst augenblicklich 500 TP und 50% deiner maximalen MP.",
+    "自身のＴＰを500回復し、かつ最大ＭＰの50％分のＭＰを回復する。"
+  ],
+  [
+    "Delivers an attack with a potency of 300.\nCan only be executed immediately after evading an attack.\nAdditional Effect: Slow +20%\nDuration: 30s",
+    "Effectue une attaque physique sur la cible.\nPuissance: 300\nEffet additionnel: inflige Lenteur 20%.\nDurée: 30s\nCondition: après une esquive.",
+    "Du führst eine physische Attacke aus.\nAttacke-Wert: 300\nZusatzeffekt: Gegner wird um 20% verlangsamt.\nBedingung: Nur direkt nach erfolgreichem Ausweichen\nDauer: 30 Sekunden",
+    "対象に物理攻撃。　威力：300\n追加効果：対象に20％スロウを付与する　効果時間：30秒\n発動条件：回避直後"
+  ],
+  [
+    "Shortens recast time for next ability used by 50%.\nDuration: 15s",
+    "Réduit de 50% le temps de recharge de la prochaine action lancée.\nDurée: 15s",
+    "Du halbierst die Re­ak­ti­vie­rungs­zeit des nächsten ausgeführten Talents.\nDauer: 15 Sekunden",
+    "効果時間中に実行する1回のアビリティのリキャストタイムを50％短縮する。\n効果時間：15秒"
+  ],
+  [
+    "Restores target's HP.\nCure Potency: 9,000",
+    "Restaure les PV de la cible.\nPuissance: 9000",
+    "Du regenerierst LP des Ziels.\nHeilpotenzial: 9000",
+    "対象のＨＰを回復する。　回復力：9000"
+  ],
+  [
+    "Restores target's HP.\nCure Potency: 12,000",
+    "Restaure les PV de la cible.\nPuissance: 12000",
+    "Du regenerierst LP des Ziels.\nHeilpotenzial: 12000",
+    "対象のＨＰを回復する。　回復力：12000"
+  ],
+  [
+    "Creates a barrier around target that absorbs damage totaling 10% of target's maximum HP.\nDuration: 30s",
+    "Crée sur la cible une barrière absorbant les dégâts pour un total de 10% de ses PV maximums.\nDurée: 30s",
+    "Du errichtest eine Barriere um das Ziel, die insgesamt 10% der Maximal-LP des Ziels absorbiert.\nDauer: 30 Sekunden",
+    "対象に一定量のダメージを防ぐバリアを張る。\nこのバリアは対象の最大ＨＰの10％分のダメージを軽減する。\n効果時間：30秒"
+  ],
+  [
+    "Restores HP of target and all party members nearby target.\nCure Potency: 9,000",
+    "Restaure les PV de la cible et des équipiers autour.\nPuissance: 9000",
+    "Du regenerierst LP des Ziels und aller umstehenden Grup­pen­mit­glieder.\nHeilpotenzial: 9000",
+    "対象とその周囲のパーティメンバーのＨＰを回復する。\n回復力：9000"
+  ],
+  [
+    "Grants healing over time effect to target.\nCure Potency: 2,500\nDuration: 21s",
+    "Restaure périodiquement les PV de la cible.\nPuissance: 2500 Durée: 21s",
+    "Du regenerierst stetig LP des Ziels.\nHeilpotenzial: 2500\nDauer: 21 Sekunden",
+    "対象のＨＰを継続回復する。　回復力：2500\n効果時間：21秒"
+  ],
+  [
+    "Removes a single detrimental effect from target.",
+    "Soigne une altération d'état de la cible.",
+    "Du entfernst einen negativen Status vom anvisierten Ziel.",
+    "対象にかかった一部の弱体効果を1つ解除する。"
+  ],
+  [
+    "Gesture threateningly, placing yourself at the top of a target's enmity list and increasing enmity generation.\nDuration: 15s",
+    "Provoque la cible et vous place en tête de sa liste d'inimitié. Augmente aussi l'inimitié des ennemis alentour envers vous.\nDurée: 15s",
+    "Du lenkst die größte Feindseligkeit auf dich und erhöhst kurzzeitig die Feindseligkeit der Gegner gegen dich.\nDauer: 15 Sekunden",
+    "対象を挑発し、自身への敵視を最高位にする。\nかつ、一定時間自身への敵視を上昇させる。\n効果時間：15秒"
+  ],
+  [
+    "Resurrects target to a weakened state.",
+    "Ressuscite la cible avec l'effet Affaiblissement.",
+    "Du belebst das Ziel wieder, wonach es für gewisse Zeit unter Schwäche leidet.",
+    "対象を衰弱状態で蘇生する。"
+  ],
+  [
+    "Increases target's damage dealt by 10%.\nDuration: 100s",
+    "Augmente de 10% les dégâts infligés par la cible.\nDurée: 100s",
+    "Du erhöhst den ausgeteilten Schaden des Ziels um 10%.\nDauer: 100 Sekunden",
+    "対象の与ダメージを10％上昇させる。\n効果時間：100秒"
+  ],
+  [
+    "Reduces physical damage taken by 99%.\nDuration: 8s",
+    "Réduit de 99% les dégâts physiques subis.\nDurée: 8s",
+    "Du verringerst den Schaden, den du durch phyische Angriffe erleidest, um 99%.\nDauer: 8 Sekunden",
+    "一定時間、自身の被物理ダメージを99％軽減させる。\n効果時間：8秒"
+  ],
+  [
+    "Reduces magic damage taken by 99%.\nDuration: 8s",
+    "Réduit de 99% les dégâts magiques subis.\nDurée: 8s",
+    "Du reduzierst Schaden, den du durch magische Angriffe erleidest, um 99%.\nDauer: 8 Sekunden",
+    "一定時間、自身の被魔法ダメージを99％軽減させる。\n効果時間：8秒"
+  ],
+  [
+    "Creates a magic-reflecting barrier around self or party member.\nDuration: 10s",
+    "Octroie une protection à vous ou à l'équipier ciblé qui renvoie les sorts de magie subis sur leur lanceur.\nDurée: 10s",
+    "Du errichtest eine Barriere um dich oder ein anderes Grup­pen­mit­glied, die jedwede Magie reflektiert.\nDauer: 10 Sekunden",
+    "自身またはパーティメンバーひとりを対象として、効果時間中に受ける魔法を跳ね返すバリアを付与する。\n効果時間：10秒"
+  ],
+  [
+    "Delivers an attack with a potency of 1000.\nCan only be executed when your HP is below 50%.\nAdditional Effect: Restores an amount of own HP proportional to damage dealt",
+    "Effectue une attaque physique sur la cible.\nPuissance: 1000\nEffet additionnel: régénère une partie des PV en fonction des dégâts infligés.\nCondition: vos PV restants sont inférieurs à 50% du maximum.",
+    "Du führst eine physische Attacke aus.\nAttacke-Wert: 1000\nZusatzeffekt: Du wandelst einen Teil deines ausgeteilten Schadens in LP um.\nBedingung: Die eigenen LP betragen 50% oder weniger.",
+    "対象に物理攻撃。　威力：1000\n追加効果：与えたダメージに比例して自身のＨＰを回復する\n発動条件：自身のＨＰが50％以下"
+  ],
+  [
+    "Increases the amount of magia aether regenerated over time by self and nearby party members.\nDuration: 30s",
+    "Augmente votre régénération de points d'éther Magia et celle de vos équipiers alentour.\nDurée: 30s",
+    "Erhöht die Magia-Ätherregeneration von dir und umstehenden Grup­pen­mit­gliedern.\nDauer: 30 Sekunden",
+    "一定時間、自身と周囲のパーティメンバーのマギアエーテルの回復量を上昇させる。\n効果時間：30秒"
+  ],
+  [
+    "Deals unaspected damage with a potency of 200.\nAdditional Effect: Afflicts undead targets with Banish L, increasing damage taken by 12%\nDuration: 60s",
+    "Inflige des dégâts magiques neutres à la cible.\nPuissance: 200\nEffet additionnel: dégâts augmentés de 12% sur les morts-vivants.\nDurée: 60s",
+    "Du führst eine elementneutrale magische Attacke aus.\nAttacke-Wert: 200\nZusatzeffekt: Erhöht den erlittenen Schaden untoter Gegner um 12%.\nDauer: 60 Sekunden",
+    "対象に無属性魔法攻撃。　威力：200\nアンデッド系モンスターに対して追加効果を与える。\n追加効果：被ダメージを12％上昇させる\n効果時間：60秒"
+  ],
+  [
+    "Deals unaspected damage with a potency of 150 to target and all enemies nearby it.\nAdditional Effect: Afflicts undead targets with Banish L, increasing damage taken by 12%\nDuration: 60s",
+    "Inflige des dégâts magiques neutres à la cible et aux ennemis autour.\nPuissance: 150\nEffet additionnel: dégâts augmentés de 12% sur les morts-vivants.\nDurée: 60s",
+    "Du führst eine elementneutrale magische Attacke auf das Ziel und umstehende Gegner aus.\nAttacke-Wert: 150\nZusatzeffekt: Erhöht den erlittenen Schaden untoter Gegner um 12%.\nDauer: 60 Sekunden",
+    "対象とその周囲の敵に無属性魔法攻撃。　威力：150\nアンデッド系モンスターに対して追加効果を与える。\n追加効果：被ダメージを12％上昇させる\n効果時間：60秒"
+  ],
+  [
+    "Increases spell damage by 100% while increasing MP cost.\nDuration: 20s",
+    "Double les dégâts de vos actions de type magique et augmente les PM qu'elles consomment.\nDurée: 20s",
+    "Du verdoppelst den Schaden magischer Attacken im Austausch für erhöhten MP-Verbrauch.\nDauer: 20 Sekunden",
+    "一定時間、自身の魔法詠唱によるＭＰ消費を増加させる代わりに、魔法カテゴリアクションによるダメージを100％上昇させる。\n効果時間：20秒"
+  ],
+  [
+    "Increases physical damage dealt while dealing damage to self over time.\nStacks increase every 3 seconds, up to a maximum of 16. For each stack, physical damage dealt is increased by 15%, and potency of damage dealt to self increases by 1,200.\nDuration: 48s",
+    "Augmente les dégâts physiques que vous infligez, mais vous perdez peu à peu des PV.\nDurée: 48s\nL'effet s'accumule toutes les 3 secondes jusqu'à un maximum de 16 fois.\nChaque degré d'accumulation augmente les dégâts physiques de 15% et la perte de PV de 1200.",
+    "Du erhöhst deinen ausgeteilten physischen Schaden alle 3 Sekunden um 15%, während deine LP jeweils um 1200 LP mehr sinken. Der Effekt ist bis zu 16 Einheiten stapelbar.\nDauer: 48 Sekunden",
+    "一定時間、自身のＨＰが減少し続ける代わりに、自身の与物理ダメージを上昇させる。\n効果時間：48秒\n3秒ごとにスタック数が増加していき、最大16スタックする。\n与物理ダメージ上昇効果は1スタックにつき15%上昇する。\nＨＰ減少効果は1スタックにつき1200増加する。"
+  ],
+  [
+    "Delivers a ranged attack with a potency of 80. Potency increases up to 1,000% the lower the target's HP.\nGenerates significant enmity upon use.",
+    "Effectue une attaque physique à distance sur la cible.\nPuissance: 80\nLa puissance augmente d'autant plus que les PV restants de la cible sont bas, jusqu'à 10 fois sa valeur normale.\nCette action génère beaucoup d'inimitié envers vous.",
+    "Du führst eine physische Fernkampfattacke aus.\nAttacke-Wert: 80\nMit sinkenden LP des Ziels steigt der Attacke-Wert bis zum maximal Zehnfachen. Erhöht die Feindseligkeit extrem.",
+    "対象に遠隔物理攻撃。　威力：80\n対象の残りＨＰが少ないほど威力が上昇し、最大で10倍になる。\nこのアクションは敵視上昇率が高い。"
+  ],
+  [
+    "LOGOS ACTIONS",
+    "ACTIONS LOGOS",
+    "LOGOS-KOMMANDOS",
+    "ロゴスアクション"
+  ],
+  [
+    "LOGOGRAMS",
+    "ÉCLAT LOGOS",
+    "UNPROSPECTIERTER LOGOS-SPLITTER",
+    "未鑑定ロゴスシャード"
+  ]
+]

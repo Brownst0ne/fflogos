@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import data from './data.json';
+import id from './id.json';
 import combos from './combos.json';
 import weather from './weather.json';
 import Tooltip from 'react-simple-tooltip';
 import Collapsible from 'react-collapsible';
 const images = importAll(require.context('./img', false, /\.(png|jpe?g|svg)$/));
+var lang = 0;
 
 function importAll(r) {
   let images = {};
@@ -25,25 +27,31 @@ function Square(props) {
   )
 }
 
+function Language(props) {
+  return (
+    <button type="button" class="btn btn-secondary" onClick={props.onClick}>{props.value}</button>
+  )
+}
+
 function Mneme(props) {
   let v = props.check ? "-on" : "-off";
   return (
     <>
-    <tr style={{width: "100%"}} className={data[props.value].logogram + v}>
+    <tr style={{width: "100%"}} className={id[data[props.value].logogram][0] + v}>
 
         <td style={{width: "100%"}}>
         <Tooltip
           placement="right" style={{width: "100%"}}
           content={
             <div>
-              <p style={{width:"200px"}}>{data[props.value].logogram}</p>
+              <p style={{width:"200px"}}>{id[data[props.value].logogram][lang]}</p>
               <p>Obtained from:</p>
               <p>{data[props.value].source}</p>
             </div>
           }
         >
           <img src= {images[data[props.value].type + "_mneme.png"]} alt=""/>
-          {data[props.value].name}
+          {id[data[props.value].name][lang]}
           </Tooltip>
         </td>
         <td >{props.totals}</td>
@@ -68,21 +76,21 @@ function Mneme(props) {
 function Logo(props) {
   let v = props.check ? "-on" : "-off";
   return (
-    <tr className={data[props.value].logogram + v}>
+    <tr className={id[data[props.value].logogram][0] + v}>
 
       <td>
       <Tooltip
                   placement="right" style={{width: "100%"}}
                   content={
                     <div>
-                      <p style={{width:"200px"}}>{data[props.value].logogram}</p>
+                      <p style={{width:"200px"}}>{id[data[props.value].logogram][lang]}</p>
                       <p>Obtained from:</p>
                       <p>{data[props.value].source}</p>
                     </div>
                   }
                 >
-        <img src= {images[data[props.value].logogram + ".png"]} alt=""/>
-        {data[props.value].logogram}
+        <img src= {images[id[data[props.value].logogram][0] + ".png"]} alt=""/>
+        {id[data[props.value].logogram][lang]}
         </Tooltip>
       </td>
 
@@ -103,13 +111,13 @@ const label = flipped => {
     mnem.push(
       <>
       <div className={"col-4 " + c}>
-      <p>{combos[flipped].mneme1[i]}</p>
+      <p>{id[combos[flipped].mneme1[i]][lang]}</p>
       </div>
       <div className={"col-4 " + c}>
-      <p>{combos[flipped].mneme2[i]}</p>
+      <p>{id[combos[flipped].mneme2[i]][lang]}</p>
       </div>
       <div className={"col-4 " + c}>
-      <p>{combos[flipped].mneme3[i]}</p>
+      <p>{id[combos[flipped].mneme3[i]][lang]}</p>
       </div>
       </>
     );
@@ -118,7 +126,7 @@ const label = flipped => {
     return (
         <div className=" info-box row">
           <div className="col-6">
-            <p className="title">Name: {combos[flipped].name}</p>
+            <p className="title">Name: {id[combos[flipped].name][lang]}</p>
           </div>
           <div className="col-3">
             <p className="title">Type: {combos[flipped].type}</p>
@@ -127,7 +135,7 @@ const label = flipped => {
             <p className="title">Uses: {combos[flipped].use}</p>
           </div>
           <div className="col-12">
-          <p className="title">{combos[flipped].description}</p>
+          <p className="title">{id[combos[flipped].description][lang]}</p>
           </div>
           <div className="col-12">
           <p className="title">Jobs: {combos[flipped].jobs}</p>
@@ -147,6 +155,55 @@ const label = flipped => {
     );
 }
 
+class Popup extends React.Component {
+  render() {
+    return (
+      <div className='popup'>
+        <div className='popup_inner'>
+          {this.props.text}
+          <button className="col-6 btn btn-success" onClick={this.props.updateBoard}>{this.props.activate}</button>
+          <button className="col-6 btn btn-danger"onClick={this.props.closePopup}>close</button>
+        </div>
+      </div>
+    );
+  }
+}
+
+class Languages extends React.Component {
+  renderLang() {
+    let row = [];
+    row.push(<Language
+                onClick={() => this.props.lang(0)}
+                value={"English"}
+                key={0}
+              />);
+    row.push(<Language
+                onClick={() => this.props.lang(1)}
+                value={"Francais"}
+                key={1}
+              />);
+    row.push(<Language
+                onClick={() => this.props.lang(2)}
+                value={"Deutsch"}
+                key={2}
+              />);
+    row.push(<Language
+                onClick={() => this.props.lang(3)}
+                value={"日本語"}
+                key={3}
+              />);
+
+    return row;
+  }
+  render() {
+    return (
+      <>
+        {this.renderLang()}
+
+      </>
+    );
+  }
+}
 
 class Clock extends React.Component {
   constructor(props) {
@@ -269,7 +326,7 @@ class Mnemes extends React.Component {
     let row = [];
     for(let j = 0; j < 24; j++){
       row.push(<Mneme value={j}
-                  totals={this.props.totals[data[j].name]}
+                  totals={this.props.totals[id[data[j].name][0]]}
                   owned={this.props.owned[j]}
                   increment={() => this.props.increment(j)}
                   decrement={() => this.props.decrement(j)}
@@ -343,13 +400,7 @@ class Game extends React.Component {
     this.state = {
       width: window.innerWidth,
       squares: Array(50).fill(null),
-      mnemes: data.map(function(movie){
-        return movie.name;
-      }),
       image: Array(50).fill(null),
-      logograms: data.map(function(d){
-        return d.logogram;
-      }),
       checkMneme:Array(24).fill(1),
       checkLogo:Array(24).fill(1),
       count: 0,
@@ -357,15 +408,24 @@ class Game extends React.Component {
       flipped: null,
       owned: Array(50).fill(0),
       possible: Array(50).fill(0),
+      showPopup: false,
+      clicked: 0,
     };
+  }
+
+  togglePopup(i) {
+    this.setState({
+      showPopup: !this.state.showPopup
+    });
+    console.log(this.state.showPopup);
   }
 
   checkPossible(amount, totals, image) {
 
     let diff = new Map();
     for(let i = 0; i < 24; i++) {
-      if(totals[data[i].name]) {
-        diff.set(data[i].name, amount[i]);
+      if(totals[id[data[i].name][0]]) {
+        diff.set(id[data[i].name][0], amount[i]);
       }
     }
 
@@ -374,15 +434,15 @@ class Game extends React.Component {
       for(let j = 0; j < combos[i].amount; j++) {
         let cnt = 0;
         let amounts = new Map(diff);
-        if(amounts.get(combos[i].mneme1[j])) {
+        if(amounts.get(id[combos[i].mneme1[j]][0])) {
           cnt++;
-          amounts.set(combos[i].mneme1[j], amounts.get(combos[i].mneme1[j])-1);
+          amounts.set(id[combos[i].mneme1[j]][0], amounts.get(id[combos[i].mneme1[j]][0])-1);
         }
-        if(amounts.get(combos[i].mneme2[j]) || combos[i].mneme2[j] === "") {
-          amounts.set(combos[i].mneme2[j], amounts.get(combos[i].mneme2[j])-1);
+        if(amounts.get(id[combos[i].mneme2[j]][0]) || id[combos[i].mneme2[j]][0] === "") {
+          amounts.set(id[combos[i].mneme2[j]][0], amounts.get(id[combos[i].mneme2[j]][0])-1);
           cnt++;
         }
-        if(amounts.get(combos[i].mneme3[j]) || combos[i].mneme3[j] === "") {
+        if(amounts.get(id[combos[i].mneme3[j]][0]) || id[combos[i].mneme3[j]][0] === "") {
           cnt++;
         }
         if(cnt === 3){
@@ -491,7 +551,7 @@ class Game extends React.Component {
     var image = this.state.image.slice();
 
     owned[i] += 1;
-    if(totals[data[i].name] - owned[i] <= 0){
+    if(totals[id[data[i].name][0]] - owned[i] <= 0){
       checkMneme[i] = null;
     }
     var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
@@ -511,7 +571,7 @@ class Game extends React.Component {
     const squares = this.state.squares.slice();
     var image = this.state.image.slice();
     owned[i] -= 1;
-    if(this.state.totals[data[i].name] - owned[i] > 0){
+    if(this.state.totals[id[data[i].name][0]] - owned[i] > 0){
       checkMneme[i] = 1;
     }
     if(owned[i] < 0) {
@@ -527,8 +587,12 @@ class Game extends React.Component {
       checkLogo: checkLogo});
   }
 
-  handleClick(i) {
+  lang(i) {
+    lang = i;
+    this.setState({lang: i});
+  }
 
+  updateBoard(i) {
     const squares = this.state.squares.slice();
     const image = this.state.image.slice();
     const owned = this.state.owned.slice();
@@ -538,9 +602,10 @@ class Game extends React.Component {
       squares[i] = null;
       image[i] = images["empty.png"];
     } else{
-      squares[i] = combos[i].name;
-      image[i] = images[combos[i].name + ".png"];
+      squares[i] = id[combos[i].name][0];
+      image[i] = images[id[combos[i].name][0]+ ".png"];
     }
+
 
     var totals = calculcateTotal(squares);
     var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
@@ -554,6 +619,43 @@ class Game extends React.Component {
       checkLogo: checkLogo,
       totals: totals,
     });
+    this.togglePopup();
+  }
+
+  handleClick(i) {
+    const { width } = this.state;
+    const isMobile = width <= 768;
+    const squares = this.state.squares.slice();
+    const image = this.state.image.slice();
+    const owned = this.state.owned.slice();
+    const checkMneme = this.state.checkMneme.slice();
+
+    if(isMobile) {
+          this.togglePopup();
+          this.setState({clicked: i});
+    } else {
+      if(squares[i]) {
+        squares[i] = null;
+        image[i] = images["empty.png"];
+      } else{
+        squares[i] = id[combos[i].name][0];
+        image[i] = images[id[combos[i].name][0]+ ".png"];
+      }
+
+
+      var totals = calculcateTotal(squares);
+      var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
+      image[i] = this.checkPossible(owned, totals, image)[i];
+
+      this.setState({
+        squares: squares,
+        image: image,
+        count: squares.filter(Boolean).length,
+        checkMneme: mneme,
+        checkLogo: checkLogo,
+        totals: totals,
+      });
+    }
   }
 
   render() {
@@ -620,7 +722,13 @@ class Game extends React.Component {
           </div>
         </div>
         <div className="row">
-        <Collapsible trigger="LOGOS ACTIONS">
+            <Languages
+              lang={(i) => this.lang(i)}
+            />
+        </div>
+        <br/>
+        <div className="row">
+        <Collapsible trigger={id[109][lang]}>
           <div className="Row">
           <div className="tabletitle_m">
             <h2>Logos Action Log</h2>
@@ -659,18 +767,13 @@ class Game extends React.Component {
           </Collapsible>
         </div>
         <div className="row">
-          <Collapsible trigger="LOGOS DESCRIPTION">
-            {label(this.state.flipped)}
-          </Collapsible>
-        </div>
-        <div className="row">
         <Collapsible trigger="MNEMES">
         <br/>
         <p>Enter how many of each you have below using the +/- buttons. The number to the right of each name shows how many remaining.</p>
         <p><img src = {images['empty.png']} alt=""/> = You can't obtain this yet.</p>
         <p><img src = {images['empty-inverse.png']} alt=""/> = You can obtain this using some combination.</p>
           <Mnemes
-            mnemes={this.state.mnemes}
+
             checkMneme={this.state.checkMneme}
             totals={this.state.totals}
             owned={this.state.owned}
@@ -680,13 +783,21 @@ class Game extends React.Component {
           </Collapsible>
         </div>
         <div className="row">
-          <Collapsible trigger="LOGOGRAMS">
+          <Collapsible trigger={id[110][lang]}>
             <Logogram
-              logograms={this.state.logograms}
               checkLogo={this.state.checkLogo}
               />
           </Collapsible>
         </div>
+        {this.state.showPopup ?
+          <Popup
+            closePopup={this.togglePopup.bind(this)}
+            updateBoard={() => this.updateBoard(this.state.clicked)}
+            text={label(this.state.flipped)}
+            activate={this.state.squares[this.state.clicked] ? "Deactivate" : "Activate"}
+          />
+          : null
+        }
         </>
       );
     } else {
@@ -694,15 +805,22 @@ class Game extends React.Component {
     return (
       <>
       <div className="row">
-        <div>
+        <div className="col-md-8">
           <img src={require('./img/banner1.png')} className={"img-fluid"} alt="" style={{marginBottom:"25px"}}/>
         </div>
+        <div className="col-md-4">
+          <Languages
+            lang={(i) => this.lang(i)}
+          />
+
+        </div>
       </div>
+      <br/>
         <div className="row">
           <div className="col-md-2">
 
           <Logogram
-            logograms={this.state.logograms}
+
             checkLogo={this.state.checkLogo}
           />
           <br/>
@@ -712,7 +830,7 @@ class Game extends React.Component {
           </div>
           <div className="col-md-3">
           <Mnemes
-            mnemes={this.state.mnemes}
+
             checkMneme={this.state.checkMneme}
             totals={this.state.totals}
             owned={this.state.owned}
@@ -790,9 +908,9 @@ function calculateRemaining(squares) {
     if(squares[i]) {
 
     } else {
-      remaining.add(combos[i].mneme1[0]);
-      remaining.add(combos[i].mneme2[0]);
-      remaining.add(combos[i].mneme3[0]);
+      remaining.add(id[combos[i].mneme1[0]][lang]);
+      remaining.add(id[combos[i].mneme2[0]][lang]);
+      remaining.add(id[combos[i].mneme3[0]][lang]);
     }
   }
 
@@ -805,9 +923,9 @@ function calculcateTotal(squares) {
     if(squares[i]) {
 
     } else {
-      total.push(combos[i].mneme1[0]);
-      total.push(combos[i].mneme2[0]);
-      total.push(combos[i].mneme3[0]);
+      total.push(id[combos[i].mneme1[0]][0]);
+      total.push(id[combos[i].mneme2[0]][0]);
+      total.push(id[combos[i].mneme3[0]][0]);
     }
   }
   return counts(total);
@@ -816,8 +934,8 @@ function calculcateTotal(squares) {
 function calculcateLogos(l) {
   let ret = null;
   for(let i = 0; i < 24; i++){
-    if(data[i].name === l) {
-      ret = data[i].logogram;
+    if(id[data[i].name][0] === l) {
+      ret = id[data[i].logogram][0];
     }
   }
   return ret;
@@ -828,7 +946,7 @@ function calculateMnemes(squares, checkMneme, owned) {
   var totals = calculcateTotal(squares);
   var total = [];
   for(let i = 0; i < 24; i++) {
-    if(totals[data[i].name] - owned[i] > 0) {
+    if(totals[id[data[i].name][0]] - owned[i] > 0) {
       checkMneme[i] = 1;
     } else {
       checkMneme[i] = 0;
