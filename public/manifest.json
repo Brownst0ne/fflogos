@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "FFLOGOS",
+  "name": "FFLOGOS - Logos tracker for FFXIV",
   "icons": [
     {
       "src": "favicon.ico",
