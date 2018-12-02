@@ -10,6 +10,11 @@
     "use": 3,
     "type": "Spell",
     "jobs": "WHM SCH AST",
+    "heal":1,
+    "tank":0,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": "Wisdom of the Aetherweaver.png"
   },
   {
@@ -23,6 +28,11 @@
     "use": 3,
     "type": "Spell",
     "jobs": "PLD WAR DRK",
+    "heal":0,
+    "tank":1,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -36,6 +46,11 @@
     "use": 3,
     "type": "Spell",
     "jobs": "MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM",
+    "heal":1,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -64,6 +79,11 @@
     "use": 3,
     "type": "Spell",
     "jobs": "PLD WAR DRK",
+    "heal":0,
+    "tank":1,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -89,6 +109,11 @@
     "use": 3,
     "type": "Spell",
     "jobs": "WHM SCH AST",
+    "heal":1,
+    "tank":0,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -96,18 +121,23 @@
     "name": 12,
     "amount": 2,
     "mneme1": [
-              12,
-              1],
+              1,
+              12],
     "mneme2": [
-              32,
-              1],
+              1,
+              32],
     "mneme3": [
-              32,
-              1],
+              1,
+              32],
     "description": 64,
     "use": 3,
     "type": "Spell",
-    "jobs": "MNK DRG BRD BLM SMN NIN MCH SAM RDM"
+    "jobs": "MNK DRG BRD BLM SMN NIN MCH SAM RDM",
+    "heal":0,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1
   },
   {
     "id": 6,
@@ -119,7 +149,12 @@
     "description": 65,
     "use": 3,
     "type": "Spell",
-    "jobs": "PLD WAR DRK"
+    "jobs": "PLD WAR DRK",
+    "heal":0,
+    "tank":1,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0
   },
   {
     "id": 7,
@@ -132,6 +167,11 @@
     "use": 3,
     "type": "Spell",
     "jobs": "WHM SCH AST",
+    "heal":1,
+    "tank":0,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -144,7 +184,12 @@
     "description": 67,
     "use": 3,
     "type": "Spell",
-    "jobs": "MNK DRG BRD BLM SMN NIN MCH SAM RDM"
+    "jobs": "MNK DRG BRD BLM SMN NIN MCH SAM RDM",
+    "heal":0,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1
   },
   {
     "id": 9,
@@ -157,6 +202,11 @@
     "use": 3,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -170,6 +220,11 @@
     "use": 1,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -183,6 +238,11 @@
     "use": 0,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -205,6 +265,11 @@
     "use": 0,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -230,6 +295,11 @@
     "use": 30,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -252,6 +322,11 @@
     "use": 99,
     "type": "Ability",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -265,6 +340,11 @@
     "use": 99,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -278,6 +358,11 @@
     "use": 20,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -291,6 +376,11 @@
     "use": 20,
     "type": "Ability",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -313,6 +403,11 @@
     "use": 50,
     "type": "Ability",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -335,6 +430,11 @@
     "use": 50,
     "type": "Weaponskill",
     "jobs": "MNK DRG BRD BLM SMN NIN MCH SAM RDM",
+    "heal":0,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -357,6 +457,11 @@
     "use": 3,
     "type": "Ability",
     "jobs": "PLD MNK WAR DRG BRD NIN MCH DRK SAM",
+    "heal":0,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -382,6 +487,11 @@
     "use": 0,
     "type": "Spell",
     "jobs": "MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM",
+    "heal":1,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -395,6 +505,11 @@
     "use": 0,
     "type": "Weaponskill",
     "jobs": "PLD WAR WHM SCH DRK AST",
+    "heal":1,
+    "tank":1,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -408,6 +523,11 @@
     "use": 50,
     "type": "Ability",
     "jobs": "PLD MNK WAR DRG BRD WHM BLM SMN SCH MCH DRK AST SAM RDM",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -421,6 +541,11 @@
     "use": 99,
     "type": "Ability",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -434,6 +559,11 @@
     "use": 99,
     "type": "Ability",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -447,6 +577,11 @@
     "use": 50,
     "type": "Ability",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -454,21 +589,26 @@
     "name": 13,
     "amount": 2,
     "mneme1":
-    [13,
-      1
+    [1,
+      13
     ],
     "mneme2":
-    [32,
-      1
+    [1,
+      32
     ],
     "mneme3":
-    [32,
-      4
+    [4,
+      32
     ],
     "description": 86,
     "use": 30,
     "type": "Ability",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -482,6 +622,11 @@
     "use": 50,
     "type": "Ability",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -495,6 +640,11 @@
     "use": 50,
     "type": "Ability",
     "jobs": "PLD WAR DRK",
+    "heal":0,
+    "tank":1,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -508,6 +658,11 @@
     "use": 50,
     "type": "Ability",
     "jobs": "PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM",
+    "heal":1,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -521,6 +676,11 @@
     "use": 0,
     "type": "Spell",
     "jobs": "PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM",
+    "heal":0,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -549,6 +709,11 @@
     "use": 50,
     "type": "Ability",
     "jobs": "MNK DRG BRD BLM SMN NIN MCH SAM RDM",
+    "heal":0,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -574,6 +739,11 @@
     "use": 99,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -596,6 +766,11 @@
     "use": 50,
     "type": "Spell",
     "jobs": "PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM",
+    "heal":0,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -618,6 +793,11 @@
     "use": 99,
     "type": "Spell",
     "jobs": "PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM",
+    "heal":0,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -631,6 +811,11 @@
     "use": 0,
     "type": "Spell",
     "jobs": "PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM",
+    "heal":0,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -644,6 +829,11 @@
     "use": 0,
     "type": "Ability",
     "jobs": "MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM",
+    "heal":1,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -657,6 +847,11 @@
     "use": 99,
     "type": "Spell",
     "jobs": "PLD MNK WAR DRG BRD BLM SMN NIN MCH DRK SAM RDM",
+    "heal":0,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -670,6 +865,11 @@
     "use": 99,
     "type": "Spell",
     "jobs": "WHM BLM SMN SCH AST RDM",
+    "heal":1,
+    "tank":0,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -683,6 +883,11 @@
     "use": 30,
     "type": "Ability",
     "jobs": "MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM",
+    "heal":1,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -696,6 +901,11 @@
     "use": 30,
     "type": "Ability",
     "jobs": "MNK DRG BRD WHM BLM SMN SCH NIN MCH AST SAM RDM",
+    "heal":1,
+    "tank":0,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -709,6 +919,11 @@
     "use": 99,
     "type": "Spell",
     "jobs": "All Jobs",
+    "heal":1,
+    "tank":1,
+    "dps":1,
+    "rngdps":1,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -722,6 +937,11 @@
     "use": 30,
     "type": "Ability",
     "jobs": "PLD WAR DRK",
+    "heal":0,
+    "tank":1,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -735,6 +955,11 @@
     "use": 99,
     "type": "Spell",
     "jobs": "WHM SCH AST",
+    "heal":1,
+    "tank":0,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -748,6 +973,11 @@
     "use": 99,
     "type": "Spell",
     "jobs": "WHM SCH AST",
+    "heal":1,
+    "tank":0,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -761,6 +991,11 @@
     "use": 50,
     "type": "Spell",
     "jobs": "WHM SCH AST",
+    "heal":1,
+    "tank":0,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -774,6 +1009,11 @@
     "use": 5,
     "type": "Ability",
     "jobs": "WHM BLM SMN SCH AST RDM",
+    "heal":1,
+    "tank":0,
+    "dps":0,
+    "rngdps":0,
+    "mgcdps":1,
     "img": ""
   },
   {
@@ -787,6 +1027,11 @@
     "use": 5,
     "type": "Ability",
     "jobs": "PLD MNK WAR DRG NIN DRK SAM",
+    "heal":0,
+    "tank":1,
+    "dps":1,
+    "rngdps":0,
+    "mgcdps":0,
     "img": ""
   },
   {
@@ -800,6 +1045,11 @@
     "use": 20,
     "type": "Weaponskill",
     "jobs": "BRD MCH",
+    "heal":0,
+    "tank":0,
+    "dps":0,
+    "rngdps":1,
+    "mgcdps":0,
     "img": ""
   }
 ]

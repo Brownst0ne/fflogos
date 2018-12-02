@@ -21,6 +21,7 @@ function Square(props) {
     <button className="square" onClick={props.onClick}
       onMouseOut={props.onMouseOut}
       onMouseOver={props.onMouseOver}
+      style={{filter:props.opacity}}
     >
       <img src={props.image} alt=""/>
     </button>
@@ -29,7 +30,13 @@ function Square(props) {
 
 function Language(props) {
   return (
-    <button type="button" class="btn btn-secondary lng" onClick={props.onClick}>{props.value}</button>
+    <button type="button" className="btn btn-secondary lng" onClick={props.onClick}>{props.value}</button>
+  )
+}
+
+function Job(props) {
+  return (
+    <button type="button" className="btn btn-secondary lng" onClick={props.onClick}>{props.value}</button>
   )
 }
 
@@ -39,7 +46,7 @@ function Mneme(props) {
     <>
     <tr className={id[data[props.value].logogram][0] + v}>
 
-        <td style={{width:"75%"}}>
+        <td style={{width:"68%"}}>
         <Tooltip
           placement="right"
           content={
@@ -64,10 +71,10 @@ function Mneme(props) {
         <td style={{width:"7%"}}>{props.totals}</td>
 
 
-      <td style={{width:"18%"}}>
+      <td style={{width:"25%"}}>
       <div className="input-group mb-3 spinner">
 
-        <input type="text" className="form-control form-control-sm" value={props.owned}  min="0" readOnly="readonly"/>
+        <input type="text" className="form-control form-control" value={props.owned}  min="0" readOnly="readonly"/>
         <div className="input-group-btn-vertical">
           <button class="btn btn-default" onClick={props.increment} type="button"><i class="fa fa-caret-up"></i></button>
           <button class="btn btn-default" onClick={props.decrement} type="button"><i class="fa fa-caret-down"></i></button>
@@ -130,7 +137,7 @@ const label = flipped => {
   }
 
     return (
-        <div className=" info-box row">
+        <div className="row info-box">
           <div className="col-6">
             <p className="title">Name: {id[combos[flipped].name][lang]}</p>
           </div>
@@ -205,6 +212,52 @@ class Languages extends React.Component {
     return (
       <>
         {this.renderLang()}
+
+      </>
+    );
+  }
+}
+
+class Jobs extends React.Component {
+  renderJob() {
+    let row = [];
+    row.push(<Job
+                onClick={() => this.props.job("jobs")}
+                value={"All"}
+                key={1}
+              />);
+    row.push(<Job
+                onClick={() => this.props.job("tank")}
+                value={"Tank"}
+                key={2}
+              />);
+    row.push(<Job
+                onClick={() => this.props.job("heal")}
+                value={"Heal"}
+                key={3}
+              />);
+    row.push(<Job
+                onClick={() => this.props.job("dps")}
+                value={"DPS"}
+                key={4}
+              />);
+    row.push(<Job
+                onClick={() => this.props.job("rngdps")}
+                value={"Ranged DPS"}
+                key={5}
+              />);
+    row.push(<Job
+                onClick={() => this.props.job("mgcdps")}
+                value={"Magic DPS"}
+                key={6}
+              />);
+
+    return row;
+  }
+  render() {
+    return (
+      <>
+        {this.renderJob()}
 
       </>
     );
@@ -369,6 +422,7 @@ class Board extends React.Component {
         image={this.props.image[j]}
         onMouseOut={() => this.props.onMouseOut(j)}
         onMouseOver={() => this.props.onMouseOver(j)}
+        opacity={"opacity(" + this.props.opacity[j] +")"}
       /></td>);
     }
     return row;
@@ -418,6 +472,7 @@ class Game extends React.Component {
       possible: Array(50).fill(0),
       showPopup: false,
       clicked: 0,
+      opacity: Array(50).fill(1),
     };
   }
 
@@ -425,7 +480,6 @@ class Game extends React.Component {
     this.setState({
       showPopup: !this.state.showPopup
     });
-    console.log(this.state.showPopup);
   }
 
   checkPossible(amount, totals, image) {
@@ -470,7 +524,9 @@ class Game extends React.Component {
 
   saveState() {
     for (let key in this.state) {
-
+      if(key === 'opacity') {
+        continue;
+      }
       localStorage.setItem(key, JSON.stringify(this.state[key]));
     }
   }
@@ -598,6 +654,18 @@ class Game extends React.Component {
   lang(i) {
     lang = i;
     this.setState({lang: i});
+  }
+
+  job(i) {
+    const opacity = this.state.opacity.slice();
+    for(let j = 0; j < opacity.length; j++) {
+      if(combos[j][i]) {
+        opacity[j] = 1;
+      } else {
+        opacity[j] = 0.2;
+      }
+    }
+    this.setState({opacity: opacity});
   }
 
   updateBoard(i) {
@@ -738,6 +806,11 @@ class Game extends React.Component {
         <div className="row">
         <Collapsible trigger={id[109][lang]}>
           <div className="Row">
+          <div className="col-12">
+          <Jobs
+            job={(i) => this.job(i)}
+          />
+          </div>
           <div className="tabletitle_m">
             <h2>{id[111][lang]}</h2>
             <h4>{id[112][lang]}</h4>
@@ -747,6 +820,7 @@ class Game extends React.Component {
               onClick={(i) => this.handleClick(i)}
               onMouseOut={(i) => this.onMouseOut(i)}
               onMouseOver={(i) => this.onMouseOver(i)}
+              opacity={this.state.opacity}
             />
             <div className="row">
             <div className="col-12">
@@ -811,124 +885,118 @@ class Game extends React.Component {
     } else {
 
     return (
-      <>
       <div className="row">
-        <div className="col-md-6">
-          <img src={require('./img/banner1.png')} className={"img-fluid"} alt="" style={{marginBottom:"25px"}}/>
-        </div>
-        <div className="col-md-6">
+        <div className="col-6">
           <div className="row">
-            <div className="col-md-5">
-            <div className="btn-group">
-              <Languages
-                lang={(i) => this.lang(i)}
-              />
+            <div className="col-12">
+              <img src={require('./img/banner1.png')} className={"img-fluid"} alt="" style={{marginBottom:"25px"}}/>
             </div>
+            <div className="col-12">
+              <p>{id[116][lang]}</p>
             </div>
-
-          </div>
-          <div className="row">
-            <div className="col-md-4">
-              <p><img src = {images['empty.png']} alt=""/> = {id[114][lang]}</p>
-            </div>
-            <div className="col-md-6">
-              <p><img src = {images['empty-inverse.png']} alt=""/> = {id[115][lang]}</p>
-            </div>
-          </div>
-        </div>
-      </div>
-        <div className="row">
-          <div className="col-md-6">
-          <div className="row">
-          <div className="col-md-12">
-
-
-          <p>{id[116][lang]}</p>
-
-          </div>
-          <div className="col-md-6">
-          <Mnemes
-            mod={0}
-            checkMneme={this.state.checkMneme}
-            totals={this.state.totals}
-            owned={this.state.owned}
-            increment={(i) => this.increment(i)}
-            decrement={(i) => this.decrement(i)}
-          />
-
-          </div>
-          <div className="col-md-6">
-          <Mnemes
-            mod={1}
-            checkMneme={this.state.checkMneme}
-            totals={this.state.totals}
-            owned={this.state.owned}
-            increment={(i) => this.increment(i)}
-            decrement={(i) => this.decrement(i)}
-          />
-          </div>
-
-          </div>
-          <div class="row">
-          <div className="col-md-12">
-            <h2>{id[110][lang]}</h2>
-          </div>
-          <div className="col-md-12">
-          <Logogram
-
-            checkLogo={this.state.checkLogo}
-          />
-          </div>
-          </div>
-
-          </div>
-
-          <div className="col-md-6">
             <div className="row">
-              <div className="col-md-12">
-                <div className="row">
-                  <div className="col-md-12">
-                    <div className="tabletitle">
-                      <h2>{id[111][lang]}</h2>
-                      <h4>{id[112][lang]}</h4>
-                      <Board
-                        squares={this.state.squares}
-                        image={this.state.image}
-                        onClick={(i) => this.handleClick(i)}
-                        onMouseOut={(i) => this.onMouseOut(i)}
-                        onMouseOver={(i) => this.onMouseOver(i)}
-                      />
-                      </div>
-                  </div>
-                </div>
-                <div className="row">
-                <div className="col-12">
-                  <h3>{id[113][lang]}</h3>
-                  <ul className="list-inline">
-                    {numbers1}
-                  </ul>
-                </div>
-                </div>
-                <div className="row">
-                <div className="col-12">
-                  <ul className="list-inline">
-                    {numbers2}
-                  </ul>
-                </div>
-                </div>
-                <div className="row">
-                <div className="col-12">
-                  <ul className="list-inline">
-                    {numbers3}
-                  </ul>
-                </div>
-                </div>
-                {label(this.state.flipped)}
+              <div className="col-6">
+                <Mnemes
+                  mod={0}
+                  checkMneme={this.state.checkMneme}
+                  totals={this.state.totals}
+                  owned={this.state.owned}
+                  increment={(i) => this.increment(i)}
+                  decrement={(i) => this.decrement(i)}
+                />
+              </div>
+              <div className="col-6">
+                <Mnemes
+                  mod={1}
+                  checkMneme={this.state.checkMneme}
+                  totals={this.state.totals}
+                  owned={this.state.owned}
+                  increment={(i) => this.increment(i)}
+                  decrement={(i) => this.decrement(i)}
+                />
+              </div>
+            </div>
+            <div class="row">
+              <div className="col-12">
+                <h2>{id[110][lang]}</h2>
+              </div>
+              <div className="col-12">
+                <Logogram
+                  checkLogo={this.state.checkLogo}
+                />
               </div>
             </div>
           </div>
         </div>
-        </>
+        <div className="col-6">
+          <div className="row">
+            <div className="col-12">
+              <div className="btn-group">
+                <Languages
+                  lang={(i) => this.lang(i)}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-4">
+              <p><img src = {images['empty.png']} alt=""/> = {id[114][lang]}</p>
+            </div>
+            <div className="col-6">
+              <p><img src = {images['empty-inverse.png']} alt=""/> = {id[115][lang]}</p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-2">
+              <p>Filter:  -   </p>
+            </div>
+            <div className="col-10 btn-group">
+              <Jobs
+                job={(i) => this.job(i)}
+              />
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <div className="tabletitle">
+                <h2>{id[111][lang]}</h2>
+                <h4>{id[112][lang]}</h4>
+                <Board
+                  squares={this.state.squares}
+                  image={this.state.image}
+                  onClick={(i) => this.handleClick(i)}
+                  onMouseOut={(i) => this.onMouseOut(i)}
+                  onMouseOver={(i) => this.onMouseOver(i)}
+                  opacity={this.state.opacity}
+                />
+              </div>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <h3>{id[113][lang]}</h3>
+              <ul className="list-inline">
+                {numbers1}
+              </ul>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <ul className="list-inline">
+                {numbers2}
+              </ul>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-12">
+              <ul className="list-inline">
+                {numbers3}
+              </ul>
+            </div>
+          </div>
+          {label(this.state.flipped)}
+        </div>
+      </div>
     );
 
 }
