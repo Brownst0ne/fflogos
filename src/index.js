@@ -117,7 +117,7 @@ const label = flipped => {
   }
   let mnem = [];
   let c = "";
-  for(let i = 0; i < combos[flipped].amount; i++){
+  for(let i = 0; i < combos[flipped].mneme1.length; i++){
     if(i%2===0){
       c = "mo";
     } else {c = "me";}
