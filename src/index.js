@@ -357,7 +357,7 @@ class Clock extends React.Component {
 class Logogram extends React.Component {
   renderGram() {
     let row = [];
-    for(let j = 0; j < 24; j++) {
+    for(let j = 0; j < 26; j++) {
       if(j === 0 ||( j > 0 && (data[j].logogram !== data[j-1].logogram))){
         row.push(<Logo
                     value={j}
@@ -383,7 +383,7 @@ class Logogram extends React.Component {
 class Mnemes extends React.Component {
   renderMneme() {
     let row = [];
-    for(let j = 0; j < 24; j++){
+    for(let j = 0; j < 28; j++){
       if((this.props.mod === 3) || (j%2 === this.props.mod)) {
         row.push(<Mneme value={j}
                     totals={this.props.totals[id[data[j].name][0]]}
@@ -412,9 +412,9 @@ class Board extends React.Component {
 
 
 
-  renderRow(i) {
+  renderRow(i,k) {
     let row = [];
-    for(let j = i; j < i+10; j++){
+    for(let j = i; j <= k; j++){
       row.push(<td key={j}><Square
         value={this.props.squares[j]}
         key={j}
@@ -433,19 +433,22 @@ class Board extends React.Component {
       <table>
         <tbody>
             <tr className="board-row">
-              {this.renderRow(0)}
+              {this.renderRow(0,9)}
             </tr>
             <tr className="board-row">
-              {this.renderRow(10)}
+              {this.renderRow(10,19)}
             </tr>
             <tr className="board-row">
-              {this.renderRow(20)}
+              {this.renderRow(20,29)}
             </tr>
             <tr className="board-row">
-              {this.renderRow(30)}
+              {this.renderRow(30,39)}
             </tr>
             <tr className="board-row">
-              {this.renderRow(40)}
+              {this.renderRow(40,49)}
+            </tr>
+            <tr className="board-row">
+              {this.renderRow(50,55)}
             </tr>
         </tbody>
       </table>
@@ -461,18 +464,18 @@ class Game extends React.Component {
 
     this.state = {
       width: window.innerWidth,
-      squares: Array(50).fill(null),
-      image: Array(50).fill(null),
-      checkMneme:Array(24).fill(1),
-      checkLogo:Array(24).fill(1),
+      squares: Array(56).fill(null),
+      image: Array(56).fill(null),
+      checkMneme:Array(28).fill(1),
+      checkLogo:Array(28).fill(1),
       count: 0,
-      totals: Array(50).fill(null),
+      totals: Array(56).fill(null),
       flipped: null,
-      owned: Array(50).fill(0),
-      possible: Array(50).fill(0),
+      owned: Array(56).fill(0),
+      possible: Array(56).fill(0),
       showPopup: false,
       clicked: 0,
-      opacity: Array(50).fill(1),
+      opacity: Array(56).fill(1),
     };
   }
 
@@ -485,13 +488,13 @@ class Game extends React.Component {
   checkPossible(amount, totals, image) {
 
     let diff = new Map();
-    for(let i = 0; i < 24; i++) {
+    for(let i = 0; i < 28; i++) {
       if(totals[id[data[i].name][0]]) {
         diff.set(id[data[i].name][0], amount[i]);
       }
     }
 
-    for(let i = 0; i < 50; i++) {
+    for(let i = 0; i < 56; i++) {
 
       for(let j = 0; j < combos[i].amount; j++) {
         let cnt = 0;
@@ -554,9 +557,9 @@ class Game extends React.Component {
     try {
       let owned = JSON.parse(localStorage.getItem('owned'));
       let squares = JSON.parse(localStorage.getItem('squares'));
-      let image = Array(50).fill(images['empty.png']);
+      let image = Array(56).fill(images['empty.png']);
       let totals = JSON.parse(localStorage.getItem('totals'));
-      for(let i = 0; i < 50; i++) {
+      for(let i = 0; i < 56; i++) {
         if(squares[i]) {
           image[i] = images[squares[i] + '.png'];
         }
@@ -564,7 +567,7 @@ class Game extends React.Component {
       image = this.checkPossible(owned, totals, image);
       this.setState({image: image})
     } catch (e) {
-      this.setState({image: Array(50).fill(images['empty.png'])})
+      this.setState({image: Array(56).fill(images['empty.png'])})
     }
 
   }
@@ -773,7 +776,7 @@ class Game extends React.Component {
         numbers2.push(<li className = "dotoff" key={i}>{i}</li>);
       }
     }
-    for(let i = 41; i <=50;i++){
+    for(let i = 41; i <=56;i++){
       if(i <= this.state.count){
         if(i === 50){
           numbers3.push(<li className="dotspon" key={i}>{i}</li>);
@@ -1046,7 +1049,7 @@ function calculcateTotal(squares) {
 
 function calculcateLogos(l) {
   let ret = null;
-  for(let i = 0; i < 24; i++){
+  for(let i = 0; i < 28; i++){
     if(id[data[i].name][0] === l) {
       ret = id[data[i].logogram][0];
     }
@@ -1058,7 +1061,7 @@ function calculateMnemes(squares, checkMneme, owned) {
   var left = calculateRemaining(squares);
   var totals = calculcateTotal(squares);
   var total = [];
-  for(let i = 0; i < 24; i++) {
+  for(let i = 0; i < 28; i++) {
     if(totals[id[data[i].name][0]] - owned[i] > 0) {
       checkMneme[i] = 1;
     } else {
@@ -1066,7 +1069,7 @@ function calculateMnemes(squares, checkMneme, owned) {
     }
   }
 
-  var checkLogo = Array(50).fill(0);
+  var checkLogo = Array(56).fill(0);
   for(let i = 0; i < 7; i++) {
     if(checkMneme[i]) {
       checkLogo[0] = 1;
@@ -1119,6 +1122,13 @@ function calculateMnemes(squares, checkMneme, owned) {
   for(let i = 22; i < 24; i++) {
     if(checkMneme[i]) {
       checkLogo[22] = 1;
+      break;
+    }
+    checkLogo[i] = checkMneme[i];
+  }
+  for(let i = 24; i < 28; i++) {
+    if(checkMneme[i]) {
+      checkLogo[24] = 1;
       break;
     }
     checkLogo[i] = checkMneme[i];

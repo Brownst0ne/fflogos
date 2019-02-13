@@ -165,5 +165,33 @@
     "logogram": 31,
     "type": "Mitigative",
     "source": "Gold bunny chests"
+  },
+  {
+    "id": 124,
+    "name": 124,
+    "logogram": 134,
+    "type": "Obscure",
+    "source": "??"
+  },
+  {
+    "id": 125,
+    "name": 125,
+    "logogram": 134,
+    "type": "Obscure",
+    "source": "??"
+  },
+  {
+    "id": 126,
+    "name": 126,
+    "logogram": 134,
+    "type": "Obscure",
+    "source": "??"
+  },
+  {
+    "id": 127,
+    "name": 127,
+    "logogram": 134,
+    "type": "Obscure",
+    "source": "??"
   }
 ]

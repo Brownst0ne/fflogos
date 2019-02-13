@@ -706,5 +706,108 @@
     "",
     "",
     ""
+  ],
+  [
+    "Perception L",
+    "Évocation Logos : Vision radar",
+    "Logos-Tigeraugen",
+    "ロゴス・サイトラ"
+  ],
+  [
+    "Wisdom of the Elder",
+    "Mémoire d'un sage",
+    "Vermächtnis des Weisen",
+    "賢者の記憶"
+  ],
+  [
+    "Wisdom of the Duelist",
+    "Mémoire d'une fine lame",
+    "Vermächtnis des Fechtmeisters",
+    "剣豪の記憶"
+  ],
+  [
+    "Wisdom of the Fiendhunter",
+    "Mémoire d'un archer émérite",
+    "Vermächtnis des Bogengeweihten",
+    "弓聖の記憶"
+  ],
+  [
+    "Wisdom of the Indomitable",
+    "Mémoire d'un héros illustre",
+    "Vermächtnis des Helden",
+    "豪傑の記憶"
+  ],
+  [
+    "Sacrifice L",
+    "Évocation Logos : Sacrifice",
+    "Logos-Aufopferung",
+    "ロゴス・サクリファイス"
+  ]
+  ,
+  [
+    "Wisdom of the Breathtaker",
+    "Mémoire d'un voleur",
+    "Vermächtnis des Diebes",
+    "盗賊の記憶"
+  ],
+  [
+    "Magic Burst L",
+    "Évocation Logos : Explosion magique",
+    "Logos-Manaeruption",
+    "ロゴス・マジックバースト"
+  ],
+  [
+    "Double Edge L",
+    "Évocation Logos : Double tranchant",
+    "Logos-Zweischneid",
+    "ロゴス・ダブルエッジ"
+  ],
+  [
+    "Eagle Eye Shot L",
+    "Évocation Logos : Œil d'aigle",
+    "Logos-Adlerauge",
+    "ロゴス・イーグルアイ"
+  ],
+  [
+    "Reveals all traps within a 15-yalm radius. If no traps exist within 15 yalms, detects whether any traps are present within a 36-yalm radius.\nOnly effective within dungeons.",
+    "Révèle les pièges cachés dans un rayon de 15 yalms.\nSi aucun piège n'est détecté dans un rayon de 15 yalms, vous indique la présence ou non de pièges dans un rayon de 36 yalms.\nFonctionne uniquement dans un donjon.",
+    "Du deckst im Umkreis von 15 Yalmen alle Fallen auf.\nWenn sich keine Fallen im Umkreis von 15 Yalmen befinden, wird der Suchkreis auf 36 Yalme erweitert und dir wird gewahr, ob sich dort noch Fallen befinden.\nDieses Logos-Kommando kann nur in Dungeons angewendet werden.",
+    "自身の周囲15mに隠された罠を発見する。\n周囲15mに罠が無かった場合、周囲36m以内に罠が存在するかどうかを知ることができる。\nこのロゴスアクションはダンジョン内のみで効果を発揮する。"
+  ],
+  [
+    "Increases magic damage dealt by 35% and magic defense by 1,000, while decreasing spell MP cost.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 30% vos dégâts magiques infligés, de 1000 votre défense magique, et réduit le coût en PM de vos sorts de magie.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\n\n* Ne peut être utilisé en même temps qu'une autre action de type “Mémoire”.",
+    "Du erhöhst deinen ausgeteilten Magieschaden um 35% und deine Magieabwehr um 1000. Außerdem verringerst du den MP-Verbrauch deiner Zauber.\nKann nicht zusammen mit anderen Vermächtnisfähigkeiten eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Vermächtnis aktiviert wird.",
+    "自身の魔法与ダメージを35％上昇させ、かつ魔法防御力を1000増加、かつ自身の魔法詠唱によるＭＰ消費を軽減させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases physical damage dealt by 40% and maximum HP by 15%, while decreasing weaponskill TP cost.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 40% vos dégâts physiques infligés, de 15% vos PV maximums, et réduit le coût en PT des techniques d'arme.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\n\n* Ne peut être utilisé en même temps qu'une autre action de type “Mémoire”.",
+    "Du erhöhst deinen ausgeteilten physischen Schaden um 40% und deine maximalen LP werden um 15% erhöht. Außerdem ist der TP-Verbrauch von Waf­fen­fer­tig­kei­ten verringert.\nKann nicht zusammen mit anderen Vermächtnisfähigkeiten eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Vermächtnis aktiviert wird.",
+    "自身の物理与ダメージを40％上昇させ、かつ最大ＨＰを15％増加、かつウェポンスキルの実行に伴う消費ＴＰ量を減少させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases physical damage dealt by 25% and evasion by 25%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 25% vos dégâts physiques infligés et de 25% votre esquive.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\n\n* Ne peut être utilisé en même temps qu'une autre action de type “Mémoire”.",
+    "Du erhöhst deinen ausgeteilten physischen Schaden um 25% und deine Ausweichrate wird um 25% erhöht.\nKann nicht zusammen mit anderen Vermächtnisfähigkeiten eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Vermächtnis aktiviert wird.",
+    "自身の物理与ダメージを25％上昇させ、かつ回避率を25％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Increases defense by 2,000.\nGrants one stack of HP Boost each time damage equal to or greater than half of maximum HP is taken from a single-target attack.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 2000 votre défense.\nSi vous subissez une attaque vous infligeant des dégâts d'un montant supérieur ou égal à 50% de vos PV maximums, vous octroie 1 degré de Bonus de PV. Cumulable jusqu'au 16e degré.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\n\n* Ne peut être utilisé en même temps qu'une autre action de type “Mémoire”.",
+    "Deine Verteidigung ist um 2000 erhöht.\nWenn dich eine Attacke trifft und du 50% oder mehr deiner Lebenspunkte verlierst, erhältst du einen Stapel „LP-Bonus“.\nKann nicht zusammen mit anderen Vermächtnisfähigkeiten eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Vermächtnis aktiviert wird.",
+    "自身の防御力を2000上昇させる。\n効果中に単体攻撃で自身の最大ＨＰの50％以上のダメージを受けた場合、「最大ＨＰアップ」が1スタック付与される。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+  ],
+  [
+    "Restores 100% of target's HP, even if target is KO'd.\nCannot be executed if currently afflicted with Doom.\nAdditional Effect: Inflicts Doom on self\nDuration: 10s",
+    "Ressucite la cible et restaure l'intégralité de ses PV.\nEffet additionnel: vous inflige l'effet Glas.\nDurée: 10s\nCondition: ne pas être déjà victime de l'effet Glas.",
+    "Du regenerierst alle LP des Ziels und belebst es wieder.\nZusatzeffekt: Du erhältst den Status Verhängnis.\nDauer: 10 Sekunden\nBedingung: Verhängnis nicht aktiv.",
+    "対象のＨＰを全回復し、さらに蘇生する。\n追加効果：自身に「死の宣告」を付与する　効果時間：10秒 \n発動条件：「死の宣告」非効果中"
+  ],
+  [
+    "Obscure",
+    "Éclat Logos de maître scelleur non identifié",
+    "Unprospektierter Logos-Splitter des Siegels",
+    "未鑑定ロゴスシャード:封印"
   ]
 ]

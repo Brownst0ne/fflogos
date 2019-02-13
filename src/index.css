@@ -246,6 +246,12 @@ p.desc {
   border-color: #1E9EB0;
 }
 
+.Obscure-on {
+  background:#F08080;
+  border-style: solid;
+  border-color: #F08080;
+}
+
 .Conceptual-off {
   background-image: linear-gradient(to right, #A52175, gray, gray);
 
@@ -285,6 +291,11 @@ p.desc {
 
 .Mitigative-off {
   background-image: linear-gradient(to right, #1E9EB0, gray, gray);
+
+}
+
+.Obscure-off {
+  background-image: linear-gradient(to right, #F08080, gray, gray);
 
 }
 
@@ -408,4 +419,9 @@ span {
 table {
   border-collapse:separate;
   border-spacing:0 2px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
 }
