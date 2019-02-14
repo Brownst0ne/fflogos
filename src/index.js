@@ -74,10 +74,10 @@ function Mneme(props) {
       <td style={{width:"25%"}}>
       <div className="input-group mb-3 spinner">
 
-        <input type="text" className="form-control form-control" value={props.owned}  min="0" readOnly="readonly"/>
+        <input type="text" pattern="[0-9]*" className="form-control" onChange={(e) => props.updateValue(e.target.value)} value={props.owned}  min="0" />
         <div className="input-group-btn-vertical">
-          <button class="btn btn-default" onClick={props.increment} type="button"><i class="fa fa-caret-up"></i></button>
-          <button class="btn btn-default" onClick={props.decrement} type="button"><i class="fa fa-caret-down"></i></button>
+          <button className="btn btn-default" onClick={props.increment} type="button"><i className="fa fa-caret-up"></i></button>
+          <button className="btn btn-default" onClick={props.decrement} type="button"><i className="fa fa-caret-down"></i></button>
         </div>
       </div>
       </td>
@@ -390,6 +390,7 @@ class Mnemes extends React.Component {
                     owned={this.props.owned[j]}
                     increment={() => this.props.increment(j)}
                     decrement={() => this.props.decrement(j)}
+                    updateValue={(e) => this.props.updateValue(j,e)}
                     check={this.props.checkMneme[j]}
                     key={j}/>);
       }
@@ -620,6 +621,32 @@ class Game extends React.Component {
     owned[i] += 1;
     if(totals[id[data[i].name][0]] - owned[i] <= 0){
       checkMneme[i] = null;
+    }
+    var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
+    image = this.checkPossible(owned, totals, image);
+    this.setState({
+      owned: owned,
+      checkMneme: mneme,
+      image: image,
+      checkLogo: checkLogo});
+
+  }
+
+  updateValue(i,e) {
+    const owned = this.state.owned.slice();
+    const checkMneme = this.state.checkMneme.slice();
+    const totals = this.state.totals;
+    const squares = this.state.squares.slice();
+    var image = this.state.image.slice();
+    owned[i] = e;
+    if(totals[id[data[i].name][0]] - owned[i] <= 0){
+      checkMneme[i] = null;
+    }
+    if(this.state.totals[id[data[i].name][0]] - owned[i] > 0){
+      checkMneme[i] = 1;
+    }
+    if(owned[i] <= 0 || owned[i] === null) {
+      owned[i] = 0;
     }
     var [checkLogo, mneme] = calculateMnemes(squares, checkMneme, owned);
     image = this.checkPossible(owned, totals, image);
@@ -864,6 +891,7 @@ class Game extends React.Component {
             owned={this.state.owned}
             increment={(i) => this.increment(i)}
             decrement={(i) => this.decrement(i)}
+            updateValue={(e,i) => this.updateValue(e,i)}
           />
           </Collapsible>
         </div>
@@ -906,6 +934,7 @@ class Game extends React.Component {
                   owned={this.state.owned}
                   increment={(i) => this.increment(i)}
                   decrement={(i) => this.decrement(i)}
+                  updateValue={(e,i) => this.updateValue(e,i)}
                 />
               </div>
               <div className="col-6">
@@ -916,10 +945,11 @@ class Game extends React.Component {
                   owned={this.state.owned}
                   increment={(i) => this.increment(i)}
                   decrement={(i) => this.decrement(i)}
+                  updateValue={(e,i) => this.updateValue(e,i)}
                 />
               </div>
             </div>
-            <div class="row">
+            <div className="row">
               <div className="col-12">
                 <h2>{id[110][lang]}</h2>
               </div>

@@ -90,10 +90,10 @@
     "守護者の記憶"
   ],
   [
-    "Wisdom of the Remembered",
-    "Mémoire d'un héros vaillant",
-    "Vermächtnis des Helden",
-    "英傑の記憶"
+    "Spirit of the Remembered",
+    "Égide d'un héros vaillant",
+    "Segen des Helden",
+    "英傑の加護"
   ],
   [
     "Wisdom of the Ordained",
@@ -360,10 +360,10 @@
     "自身の与魔法ダメージを60％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
   ],
   [
-    "Increases physical damage dealt by 40%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
-    "Augmente de 40% vos dégâts physiques infligés.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
-    "Du erhöhst deinen ausgeteilten physischen Schaden um 40%\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
-    "自身の与物理ダメージを40％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+    "Increases damage dealt by 40%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 40% vos dégâts infligés.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\n\n* Ne peut être utilisé en même temps qu'une autre action de type “Mémoire”.",
+    "Du erhöhst deinen ausgeteilten Schaden um 40%.\nKann nicht zusammen mit anderen Vermächtnisfähigkeiten eingesetzt werden.\n\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Vermächtnis aktiviert wird.",
+    "自身の与ダメージを40％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
   ],
   [
     "Increases defense by 3,000 and maximum HP by 50%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
@@ -384,10 +384,10 @@
     "自身の最大ＭＰを50％上昇させ、かつ回復魔法の回復量を25％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
   ],
   [
-    "Increases damage dealt by 12%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
-    "Augmente de 12% vos dégâts infligés.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
-    "Du erhöhst deinen ausgeteilten Schaden um 12%\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
-    "自身の与ダメージを12％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+    "Increases damage dealt by 20%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 20% vos dégâts infligés.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Du erhöhst deinen ausgeteilten Schaden um 20%\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "自身の与ダメージを20％上昇させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
   ],
   [
     "Increases evasion by 25% while reducing damage dealt by 5%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
@@ -402,22 +402,22 @@
     "自身の回復魔法の回復量を50％上昇させ、かつ最大ＨＰを30％上昇させる代わりに、自身の与ダメージを5％減少させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
   ],
   [
-    "Increases damage dealt by 21% while reducing magic defense by 60%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
-    "Augmente de 21% vos dégâts infligés et réduit de 60% votre défense magique.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
-    "Du erhöhst deinen ausgeteilten physischen Schaden um 21%, deine Magieabwehr ist jedoch um 60% verringert.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
+    "Increases damage dealt by 30% while reducing magic defense by 60%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
+    "Augmente de 30% vos dégâts infligés et réduit de 60% votre défense magique.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
+    "Du erhöhst deinen ausgeteilten physischen Schaden um 30%, deine Magieabwehr ist jedoch um 60% verringert.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
     "自身の与ダメージを21％上昇させる代わりに、自身の魔法防御力を60％減少させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
   ],
   [
     "Increases poison resistance and movement speed, including mount speed, and increases evasion by 10%.\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
     "Augmente de 10% votre esquive, votre vitesse de déplacement à pied et à dos de monture, ainsi que votre résistance au poison.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\nNe peut être utilisé en même temps qu'une autre action de type 'Mémoire'",
     "Du erhöhst deine Ausweichrate um 10%. Außerdem ist deine Be­we­gungs­ge­schwin­dig­keit auf- und abgesessen erhöht und deine Giftresistenz verstärkt.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
-    "自身の移動速度を上昇させ、かつ回避率を10％上昇させ、かつ毒耐性を上昇させる。\n移動速度上昇効果はマウント中も有効。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+    "自身の与ダメージを30％上昇させる代わりに、自身の魔法防御力を60％減少させる。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
   ],
   [
-    "Increases maximum HP by 10% and accuracy by 30%.\nAdditional Effect: Grants a 70% chance of automatic revival upon KO\nCannot be used with other Wisdom abilities.\nEffect ends upon reuse or upon replacement of duty action.",
-    "Augmente de 10% vos PV maximums et votre précision de 30%.\nOctroie 70% de chance d'être au­to­ma­ti­que­ment ranimé après avoir perdu con­nais­san­ce.\nL'effet prend fin si vous utilisez une action Logos du même type ou si vous relancez l'action.\n* Ne peut être utilisé en même temps qu'une autre action de type “Mémoire”.",
-    "Deine maximalen LP sind um 10% und deine Präzision um 30% erhöht. Außerdem belebst du dich mit einer Wahr­schein­lich­keit von 70% bei erlittener Kampfunfähigkeit wieder.\nKann nicht zusammen mit anderen Mnemen eingesetzt werden.\nEffekt endet bei erneuter Ausführung oder wenn ein anderes Logos-Kommando aktiviert wird.",
-    "自身の最大ＨＰを10％上昇させ、かつ命中率を30％上昇させる。\n効果中に戦闘不能になると70％の確率で自動的に蘇生する。\n他の「記憶」系アクションとは同時に使えない。\nコンテンツアクション切り替え時に効果が切れる。\n再使用で解除する。　効果時間：永続"
+    "Increases maximum HP by 10% and accuracy by 30%.\nAdditional Effect: Grants a 70% chance of automatic revival upon KO\nDuration: 180m",
+    "Augmente de 10% vos PV maximums et votre précision de 30%.\nOctroie 70% de chance d'être au­to­ma­ti­que­ment ranimé après avoir perdu con­nais­san­ce.\nDurée: 180m",
+    "Deine maximalen LP sind um 10% und deine Präzision um 30% erhöht. Außerdem belebst du dich mit einer Wahr­schein­lich­keit von 70% bei erlittener Kampfunfähigkeit wieder.\nDauer: 180 Minuten",
+    "自身の最大ＨＰを10％上昇させ、かつ命中率を30％上昇させる。\n効果中に戦闘不能になると70％の確率で自動的に蘇生する。\n効果時間：180分"
   ],
   [
     "Increases the physical defense of target by 1,000.\nDuration: 30m",
@@ -588,10 +588,10 @@
     "対象を衰弱状態で蘇生する。"
   ],
   [
-    "Increases target's damage dealt by 10%.\nDuration: 100s",
-    "Augmente de 10% les dégâts infligés par la cible.\nDurée: 100s",
-    "Du erhöhst den ausgeteilten Schaden des Ziels um 10%.\nDauer: 100 Sekunden",
-    "対象の与ダメージを10％上昇させる。\n効果時間：100秒"
+    "Increases target's damage dealt by 10%.\nDuration: 300s",
+    "Augmente de 10% les dégâts infligés par la cible.\nDurée: 300s",
+    "Du erhöhst den ausgeteilten Schaden des Ziels um 10%.\nDauer: 300 Sekunden",
+    "対象の与ダメージを10％上昇させる。\n効果時間：300秒"
   ],
   [
     "Reduces physical damage taken by 99%.\nDuration: 8s",
@@ -624,16 +624,16 @@
     "一定時間、自身と周囲のパーティメンバーのマギアエーテルの回復量を上昇させる。\n効果時間：30秒"
   ],
   [
-    "Deals unaspected damage with a potency of 200.\nAdditional Effect: Afflicts undead targets with Banish L, increasing damage taken by 12%\nDuration: 60s",
-    "Inflige des dégâts magiques neutres à la cible.\nPuissance: 200\nEffet additionnel: dégâts augmentés de 12% sur les morts-vivants.\nDurée: 60s",
-    "Du führst eine elementneutrale magische Attacke aus.\nAttacke-Wert: 200\nZusatzeffekt: Erhöht den erlittenen Schaden untoter Gegner um 12%.\nDauer: 60 Sekunden",
-    "対象に無属性魔法攻撃。　威力：200\nアンデッド系モンスターに対して追加効果を与える。\n追加効果：被ダメージを12％上昇させる\n効果時間：60秒"
+    "Deals unaspected damage with a potency of 200.\nAdditional Effect: Afflicts undead targets with Banish L, increasing damage taken by 25%\nDuration: 60s",
+    "Inflige des dégâts magiques neutres à la cible.\nPuissance: 200\nEffet additionnel: dégâts augmentés de 25% sur les morts-vivants.\nDurée: 60s",
+    "Du führst eine elementneutrale magische Attacke aus.\nAttacke-Wert: 200\nZusatzeffekt: Erhöht den erlittenen Schaden untoter Gegner um 25%.\nDauer: 60 Sekunden",
+    "対象に無属性魔法攻撃。　威力：200\nアンデッド系モンスターに対して追加効果を与える。\n追加効果：被ダメージを25％上昇させる\n効果時間：60秒"
   ],
   [
-    "Deals unaspected damage with a potency of 150 to target and all enemies nearby it.\nAdditional Effect: Afflicts undead targets with Banish L, increasing damage taken by 12%\nDuration: 60s",
-    "Inflige des dégâts magiques neutres à la cible et aux ennemis autour.\nPuissance: 150\nEffet additionnel: dégâts augmentés de 12% sur les morts-vivants.\nDurée: 60s",
-    "Du führst eine elementneutrale magische Attacke auf das Ziel und umstehende Gegner aus.\nAttacke-Wert: 150\nZusatzeffekt: Erhöht den erlittenen Schaden untoter Gegner um 12%.\nDauer: 60 Sekunden",
-    "対象とその周囲の敵に無属性魔法攻撃。　威力：150\nアンデッド系モンスターに対して追加効果を与える。\n追加効果：被ダメージを12％上昇させる\n効果時間：60秒"
+    "Deals unaspected damage with a potency of 150 to target and all enemies nearby it.\nAdditional Effect: Afflicts undead targets with Banish L, increasing damage taken by 25%\nDuration: 60s",
+    "Inflige des dégâts magiques neutres à la cible et aux ennemis autour.\nPuissance: 150\nEffet additionnel: dégâts augmentés de 25% sur les morts-vivants.\nDurée: 60s",
+    "Du führst eine elementneutrale magische Attacke auf das Ziel und umstehende Gegner aus.\nAttacke-Wert: 150\nZusatzeffekt: Erhöht den erlittenen Schaden untoter Gegner um 25%.\nDauer: 60 Sekunden",
+    "対象とその周囲の敵に無属性魔法攻撃。　威力：150\nアンデッド系モンスターに対して追加効果を与える。\n追加効果：被ダメージを25％上昇させる\n効果時間：60秒"
   ],
   [
     "Increases spell damage by 100% while increasing MP cost.\nDuration: 20s",
